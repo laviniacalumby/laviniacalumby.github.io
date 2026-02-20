@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Intake Form , Lavinia Calumby</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #faf9f7;
+      --off-white: #f4f1eb;
+      --warm-gray: #e8e2d8;
+      --mid-gray: #a89e8e;
+      --dark: #1c1a17;
+      --accent: #8a7150;
+      --accent-light: #c9b48e;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    body { background: var(--off-white); color: var(--dark); font-family: var(--font-body); font-weight: 300; }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--warm-gray);
+      padding: 2.5rem 3rem;
+      text-align: center;
+    }
+    .logo { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; letter-spacing: 0.06em; }
+    .logo span { font-style: italic; color: var(--accent); }
+    .form-subtitle { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-gray); margin-top: 0.5rem; }
+
+    .container { max-width: 720px; margin: 3rem auto; padding: 0 1.5rem 4rem; }
+
+    .intro-card {
+      background: var(--white);
+      border: 1px solid var(--warm-gray);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .intro-card h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 300; margin-bottom: 1rem; }
+    .intro-card h2 em { font-style: italic; color: var(--accent); }
+    .intro-card p { font-size: 0.95rem; line-height: 1.85; color: #4a453d; }
+
+    .section {
+      background: var(--white);
+      border: 1px solid var(--warm-gray);
+      padding: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .section-label {
+      font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.6rem; display: block;
+    }
+    .section-title {
+      font-family: var(--font-display); font-size: 1.6rem; font-weight: 300;
+      margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .section-title em { font-style: italic; color: var(--accent); }
+    .section-divider { width: 32px; height: 1px; background: var(--accent-light); margin-bottom: 2rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+    label { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray); }
+    .label-hint { font-size: 0.78rem; color: #7a7068; letter-spacing: 0; text-transform: none; margin-top: 0.2rem; font-style: italic; }
+    input, textarea, select {
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 300;
+      padding: 0.85rem 1rem; border: 1px solid var(--warm-gray);
+      background: var(--white); color: var(--dark); outline: none;
+      transition: border-color 0.2s; width: 100%;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--accent); }
+    textarea { resize: vertical; min-height: 100px; }
+
+    .radio-group, .checkbox-group { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 0.5rem; }
+    .radio-option, .checkbox-option {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.85rem 1rem; border: 1px solid var(--warm-gray);
+      cursor: pointer; transition: border-color 0.2s, background 0.2s;
+      font-size: 0.88rem;
+    }
+    .radio-option:hover, .checkbox-option:hover { border-color: var(--accent-light); background: var(--off-white); }
+    .radio-option input, .checkbox-option input { width: auto; }
+
+    .scale-group { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+    .scale-btn {
+      width: 44px; height: 44px; border: 1px solid var(--warm-gray);
+      background: var(--white); cursor: pointer; font-family: var(--font-body);
+      font-size: 0.85rem; color: var(--dark); transition: all 0.2s;
+    }
+    .scale-btn:hover { border-color: var(--accent); background: var(--off-white); }
+    .scale-labels { display: flex; justify-content: space-between; font-size: 0.68rem; color: var(--mid-gray); letter-spacing: 0.08em; margin-top: 0.4rem; }
+
+    .submit-section { text-align: center; margin-top: 2.5rem; }
+    .submit-btn {
+      font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.18em;
+      text-transform: uppercase; padding: 1.1rem 3rem;
+      background: var(--dark); color: var(--white); border: none;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .submit-btn:hover { background: var(--accent); }
+    .submit-note { font-size: 0.78rem; color: var(--mid-gray); margin-top: 1rem; }
+
+    footer { text-align: center; padding: 2rem; font-size: 0.72rem; color: var(--mid-gray); }
+    footer span { font-family: var(--font-display); font-style: italic; color: var(--accent); }
+
+    @media (max-width: 600px) {
+      header { padding: 2rem 1.5rem; }
+      .section { padding: 1.75rem 1.25rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Lavinia <span>Calumby</span></div>
+  <div class="form-subtitle">New Client Intake Form</div>
+</header>
+
+<div class="container">
+
+  <div class="intro-card">
+    <h2>Welcome. I'm so glad <em>you're here.</em></h2>
+    <p>This form is the beginning of our journey together. There are no right or wrong answers , I want to understand you as a whole person, not just your fitness goals. Please take your time and answer as openly as you feel comfortable. Everything you share is completely confidential and will only be used to create the best possible experience for you.</p>
+  </div>
+
+  <form action="https://formspree.io/f/xykdplva" method="POST">
+
+    <!-- SECTION 1: ABOUT YOU -->
+    <div class="section">
+      <span class="section-label">Section 01</span>
+      <h2 class="section-title">About <em>You</em></h2>
+      <div class="section-divider"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="first_name">First Name *</label>
+          <input type="text" id="first_name" name="first_name" required />
+        </div>
+        <div class="form-group">
+          <label for="last_name">Last Name *</label>
+          <input type="text" id="last_name" name="last_name" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input type="number" id="age" name="age" />
+        </div>
+        <div class="form-group">
+          <label for="location">Town / Neighborhood</label>
+          <input type="text" id="location" name="location" placeholder="e.g. Greenwich, Cos Cob..." />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="how_heard">How did you hear about me?</label>
+        <select id="how_heard" name="how_heard">
+          <option value="">Select...</option>
+          <option>Instagram</option>
+          <option>Friend or family referral</option>
+          <option>Google search</option>
+          <option>Website</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- SECTION 2: WHERE YOU ARE IN LIFE -->
+    <div class="section">
+      <span class="section-label">Section 02</span>
+      <h2 class="section-title">Where You Are in <em>Life</em></h2>
+      <div class="section-divider"></div>
+
+      <div class="form-group">
+        <label>What does your life look like right now?</label>
+        <span class="label-hint">Tell me about your day-to-day , family, work, responsibilities, what takes up most of your energy.</span>
+        <textarea name="life_overview" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>What life stage or transition are you currently in?</label>
+        <div class="checkbox-group">
+          <label class="checkbox-option"><input type="checkbox" name="life_stage" value="Motherhood / raising young children" /> Motherhood / raising young children</label>
+          <label class="checkbox-option"><input type="checkbox" name="life_stage" value="Postpartum recovery" /> Postpartum recovery</label>
+          <label class="checkbox-option"><input type="checkbox" name="life_stage" value="Perimenopause / menopause" /> Perimenopause / menopause</label>
+          <label class="checkbox-option"><input type="checkbox" name="life_stage" value="Career transition or growth" /> Career transition or growth</label>
+          <label class="checkbox-option"><input type="checkbox" name="life_stage" value="Empty nest / new chapter" /> Empty nest / new chapter</label>
+          <label class="checkbox-option"><input type="checkbox" name="life_stage" value="Recovering from injury or illness" /> Recovering from injury or illness</label>
+          <label class="checkbox-option"><input type="checkbox" name="life_stage" value="Just ready for a change" /> Just ready for a change</label>
+          <label class="checkbox-option"><input type="checkbox" name="life_stage" value="Other" /> Other</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>On a scale of 1–10, how would you rate your current stress levels?</label>
+        <div class="scale-group" id="stress-scale">
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">1</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">2</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">3</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">4</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">5</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">6</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">7</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">8</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">9</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'stress_level')">10</button>
+        </div>
+        <div class="scale-labels"><span>Very low</span><span>Extremely high</span></div>
+        <input type="hidden" id="stress_level" name="stress_level" />
+      </div>
+
+      <div class="form-group">
+        <label>How would you describe your energy levels throughout the day?</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="energy" value="I wake up energized and stay consistent" /> I wake up energized and stay consistent</label>
+          <label class="radio-option"><input type="radio" name="energy" value="I start strong but crash in the afternoon" /> I start strong but crash in the afternoon</label>
+          <label class="radio-option"><input type="radio" name="energy" value="I feel tired most of the day" /> I feel tired most of the day</label>
+          <label class="radio-option"><input type="radio" name="energy" value="My energy is unpredictable" /> My energy is unpredictable</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>How many hours of sleep do you get on average?</label>
+        <select name="sleep_hours">
+          <option value="">Select...</option>
+          <option>Less than 5 hours</option>
+          <option>5–6 hours</option>
+          <option>6–7 hours</option>
+          <option>7–8 hours</option>
+          <option>More than 8 hours</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>How would you describe your relationship with your body right now?</label>
+        <span class="label-hint">Be as honest as you like , this is a safe space.</span>
+        <textarea name="body_relationship" rows="4"></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 3: YOUR GOALS -->
+    <div class="section">
+      <span class="section-label">Section 03</span>
+      <h2 class="section-title">Your <em>Goals</em></h2>
+      <div class="section-divider"></div>
+
+      <div class="form-group">
+        <label>What brought you here? What are you hoping to achieve?</label>
+        <span class="label-hint">Don't hold back , tell me the real reason, beyond just "I want to lose weight" or "get fit."</span>
+        <textarea name="main_goal" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>What does success look like to you in 3 months?</label>
+        <textarea name="success_3mo" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>What has stopped you from reaching your goals in the past?</label>
+        <span class="label-hint">Be honest , was it time, motivation, injury, not knowing where to start, or something else?</span>
+        <textarea name="past_obstacles" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>What areas are you most interested in working on?</label>
+        <div class="checkbox-group">
+          <label class="checkbox-option"><input type="checkbox" name="goals" value="Strength and muscle tone" /> Strength and muscle tone</label>
+          <label class="checkbox-option"><input type="checkbox" name="goals" value="Weight loss / body composition" /> Weight loss / body composition</label>
+          <label class="checkbox-option"><input type="checkbox" name="goals" value="Energy and vitality" /> Energy and vitality</label>
+          <label class="checkbox-option"><input type="checkbox" name="goals" value="Flexibility and mobility" /> Flexibility and mobility</label>
+          <label class="checkbox-option"><input type="checkbox" name="goals" value="Stress relief and mental clarity" /> Stress relief and mental clarity</label>
+          <label class="checkbox-option"><input type="checkbox" name="goals" value="Postpartum recovery" /> Postpartum recovery</label>
+          <label class="checkbox-option"><input type="checkbox" name="goals" value="Injury rehabilitation" /> Injury rehabilitation</label>
+          <label class="checkbox-option"><input type="checkbox" name="goals" value="Nutrition and healthy habits" /> Nutrition and healthy habits</label>
+          <label class="checkbox-option"><input type="checkbox" name="goals" value="Overall confidence and self-image" /> Overall confidence and self-image</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: HEALTH & WELLNESS -->
+    <div class="section">
+      <span class="section-label">Section 04</span>
+      <h2 class="section-title">Health & <em>Wellness</em></h2>
+      <div class="section-divider"></div>
+
+      <div class="form-group">
+        <label>How would you describe your current fitness level?</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="fitness_level" value="Beginner , little to no regular exercise" /> Beginner , little to no regular exercise</label>
+          <label class="radio-option"><input type="radio" name="fitness_level" value="Intermediate , I exercise occasionally" /> Intermediate , I exercise occasionally</label>
+          <label class="radio-option"><input type="radio" name="fitness_level" value="Active , I exercise regularly but want more" /> Active , I exercise regularly but want more</label>
+          <label class="radio-option"><input type="radio" name="fitness_level" value="Advanced , very consistent with training" /> Advanced , very consistent with training</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Do you have any current or past injuries I should know about?</label>
+        <textarea name="injuries" rows="3" placeholder="Please describe any injuries, surgeries, or areas of chronic pain..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Do you have any medical conditions or diagnoses?</label>
+        <textarea name="medical_conditions" rows="3" placeholder="e.g. thyroid conditions, diabetes, heart conditions, anxiety, hormonal imbalances..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Are you currently taking any medications or supplements?</label>
+        <textarea name="medications" rows="2"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>How would you describe your current eating habits?</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="nutrition" value="Very healthy and consistent" /> Very healthy and consistent</label>
+          <label class="radio-option"><input type="radio" name="nutrition" value="Mostly healthy with some indulgences" /> Mostly healthy with some indulgences</label>
+          <label class="radio-option"><input type="radio" name="nutrition" value="Inconsistent , I know what to do but struggle" /> Inconsistent , I know what to do but struggle</label>
+          <label class="radio-option"><input type="radio" name="nutrition" value="I'm not sure where to start with nutrition" /> I'm not sure where to start with nutrition</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Do you have any dietary restrictions or food allergies?</label>
+        <input type="text" name="dietary" placeholder="e.g. gluten-free, dairy-free, vegetarian, nut allergy..." />
+      </div>
+    </div>
+
+    <!-- SECTION 5: MINDSET -->
+    <div class="section">
+      <span class="section-label">Section 05</span>
+      <h2 class="section-title">Mindset & <em>Motivation</em></h2>
+      <div class="section-divider"></div>
+
+      <div class="form-group">
+        <label>What does feeling your best mean to you?</label>
+        <span class="label-hint">Not what it looks like , what it feels like.</span>
+        <textarea name="feeling_best" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>What is your relationship with exercise? Is it something you enjoy, dread, or somewhere in between?</label>
+        <textarea name="exercise_relationship" rows="3"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>On a scale of 1–10, how ready are you to commit to change right now?</label>
+        <div class="scale-group">
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">1</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">2</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">3</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">4</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">5</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">6</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">7</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">8</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">9</button>
+          <button type="button" class="scale-btn" onclick="selectScale(this, 'readiness')">10</button>
+        </div>
+        <div class="scale-labels"><span>Not yet ready</span><span>100% committed</span></div>
+        <input type="hidden" id="readiness" name="readiness" />
+      </div>
+
+      <div class="form-group">
+        <label>Is there anything else you'd like me to know about you before we begin?</label>
+        <textarea name="anything_else" rows="4" placeholder="This is your space , share anything that feels important."></textarea>
+      </div>
+    </div>
+
+    <!-- SECTION 6: LOGISTICS -->
+    <div class="section">
+      <span class="section-label">Section 06</span>
+      <h2 class="section-title">Scheduling & <em>Logistics</em></h2>
+      <div class="section-divider"></div>
+
+      <div class="form-group">
+        <label>What days generally work best for you?</label>
+        <div class="checkbox-group" style="display:grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <label class="checkbox-option"><input type="checkbox" name="days" value="Monday" /> Monday</label>
+          <label class="checkbox-option"><input type="checkbox" name="days" value="Tuesday" /> Tuesday</label>
+          <label class="checkbox-option"><input type="checkbox" name="days" value="Wednesday" /> Wednesday</label>
+          <label class="checkbox-option"><input type="checkbox" name="days" value="Thursday" /> Thursday</label>
+          <label class="checkbox-option"><input type="checkbox" name="days" value="Friday" /> Friday</label>
+          <label class="checkbox-option"><input type="checkbox" name="days" value="Saturday" /> Saturday</label>
+          <label class="checkbox-option"><input type="checkbox" name="days" value="Sunday" /> Sunday</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>What time of day works best?</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="time_pref" value="Early morning (6–8am)" /> Early morning (6–8am)</label>
+          <label class="radio-option"><input type="radio" name="time_pref" value="Morning (8–11am)" /> Morning (8–11am)</label>
+          <label class="radio-option"><input type="radio" name="time_pref" value="Midday (11am–2pm)" /> Midday (11am–2pm)</label>
+          <label class="radio-option"><input type="radio" name="time_pref" value="Afternoon (2–5pm)" /> Afternoon (2–5pm)</label>
+          <label class="radio-option"><input type="radio" name="time_pref" value="Evening (5–8pm)" /> Evening (5–8pm)</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Do you have a dedicated space at home for training?</label>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="home_space" value="Yes, I have a home gym or dedicated space" /> Yes, I have a home gym or dedicated space</label>
+          <label class="radio-option"><input type="radio" name="home_space" value="I have some open space we can use" /> I have some open space we can use</label>
+          <label class="radio-option"><input type="radio" name="home_space" value="Not really, we would need to figure it out" /> Not really, we would need to figure it out</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Do you have any equipment at home?</label>
+        <input type="text" name="equipment" placeholder="e.g. dumbbells, resistance bands, yoga mat, none..." />
+      </div>
+    </div>
+
+    <input type="hidden" name="_subject" value="New Client Intake Form , Lavinia Calumby" />
+    <input type="hidden" name="_next" value="https://laviniacalumby.github.io" />
+
+    <div class="submit-section">
+      <button type="submit" class="submit-btn">Submit My Intake Form</button>
+      <p class="submit-note">Your responses are completely confidential and go directly to Lavinia.</p>
+    </div>
+
+  </form>
+</div>
+
+<footer>
+  <p>Lavinia <span>Calumby</span> · Greenwich, CT · lavinia@laviniacalumby.com</p>
+</footer>
+
+<script>
+  function selectScale(btn, fieldId) {
+    const parent = btn.parentElement;
+    parent.querySelectorAll('.scale-btn').forEach(b => {
+      b.style.background = '';
+      b.style.borderColor = '';
+      b.style.color = '';
+    });
+    btn.style.background = '#1c1a17';
+    btn.style.borderColor = '#1c1a17';
+    btn.style.color = '#faf9f7';
+    document.getElementById(fieldId).value = btn.textContent;
+  }
+</script>
+
+</body>
+</html>

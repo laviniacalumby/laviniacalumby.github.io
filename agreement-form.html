@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Agreement , Lavinia Calumby</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #faf9f7; --off-white: #f4f1eb; --warm-gray: #e8e2d8;
+      --mid-gray: #a89e8e; --dark: #1c1a17; --accent: #8a7150;
+      --accent-light: #c9b48e; --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    body { background: var(--off-white); color: var(--dark); font-family: var(--font-body); font-weight: 300; }
+    header { background: var(--white); border-bottom: 1px solid var(--warm-gray); padding: 2.5rem 3rem; text-align: center; }
+    .logo { font-family: var(--font-display); font-size: 1.6rem; font-weight: 400; letter-spacing: 0.06em; }
+    .logo span { font-style: italic; color: var(--accent); }
+    .form-subtitle { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-gray); margin-top: 0.5rem; }
+    .container { max-width: 720px; margin: 3rem auto; padding: 0 1.5rem 4rem; }
+    .intro-card { background: var(--white); border: 1px solid var(--warm-gray); padding: 2.5rem; margin-bottom: 2.5rem; }
+    .intro-card h2 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 300; margin-bottom: 1rem; }
+    .intro-card h2 em { font-style: italic; color: var(--accent); }
+    .intro-card p { font-size: 0.95rem; line-height: 1.85; color: #4a453d; }
+    .section { background: var(--white); border: 1px solid var(--warm-gray); padding: 2.5rem; margin-bottom: 1.5rem; }
+    .section-label { font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; display: block; }
+    .section-title { font-family: var(--font-display); font-size: 1.6rem; font-weight: 300; margin-bottom: 0.5rem; }
+    .section-title em { font-style: italic; color: var(--accent); }
+    .section-divider { width: 32px; height: 1px; background: var(--accent-light); margin-bottom: 2rem; }
+    .policy-block { border-left: 2px solid var(--accent-light); padding: 1.25rem 1.5rem; margin-bottom: 1.5rem; background: var(--off-white); }
+    .policy-block h4 { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .policy-block p { font-size: 0.88rem; line-height: 1.8; color: #4a453d; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem; }
+    label { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid-gray); }
+    input[type="text"], input[type="date"], input[type="email"], textarea {
+      font-family: var(--font-body); font-size: 0.9rem; font-weight: 300;
+      padding: 0.85rem 1rem; border: 1px solid var(--warm-gray);
+      background: var(--white); color: var(--dark); outline: none;
+      transition: border-color 0.2s; width: 100%;
+    }
+    input:focus, textarea:focus { border-color: var(--accent); }
+    .agree-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1rem 1.25rem; border: 1px solid var(--warm-gray);
+      margin-bottom: 0.75rem; cursor: pointer; transition: border-color 0.2s;
+    }
+    .agree-item:hover { border-color: var(--accent-light); background: var(--off-white); }
+    .agree-item input { width: auto; margin-top: 0.15rem; flex-shrink: 0; }
+    .agree-item span { font-size: 0.88rem; line-height: 1.7; }
+    .submit-section { text-align: center; margin-top: 2.5rem; }
+    .submit-btn { font-family: var(--font-body); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 1.1rem 3rem; background: var(--dark); color: var(--white); border: none; cursor: pointer; transition: background 0.2s; }
+    .submit-btn:hover { background: var(--accent); }
+    .submit-note { font-size: 0.78rem; color: var(--mid-gray); margin-top: 1rem; }
+    footer { text-align: center; padding: 2rem; font-size: 0.72rem; color: var(--mid-gray); }
+    footer span { font-family: var(--font-display); font-style: italic; color: var(--accent); }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      header, .section { padding: 1.75rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Lavinia <span>Calumby</span></div>
+  <div class="form-subtitle">Client Agreement & Liability Waiver</div>
+</header>
+
+<div class="container">
+
+  <div class="intro-card">
+    <h2>Our <em>Agreement</em></h2>
+    <p>This agreement sets out the terms of our working relationship so that we're both clear and protected. Please read through each section carefully. If you have any questions before signing, don't hesitate to reach out to me directly at lavinia@laviniacalumby.com.</p>
+  </div>
+
+  <form action="https://formspree.io/f/xykdplva" method="POST">
+
+    <div class="section">
+      <span class="section-label">Client Information</span>
+      <h2 class="section-title">About <em>You</em></h2>
+      <div class="section-divider"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="full_name">Full Name *</label>
+          <input type="text" id="full_name" name="full_name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" name="phone" />
+        </div>
+        <div class="form-group">
+          <label for="start_date">Anticipated Start Date</label>
+          <input type="date" id="start_date" name="start_date" />
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="section-label">Policies</span>
+      <h2 class="section-title">Terms & <em>Conditions</em></h2>
+      <div class="section-divider"></div>
+
+      <div class="policy-block">
+        <h4>Sessions</h4>
+        <p>All sessions take place at the client's home in Greenwich, CT. Sessions are 60 minutes unless otherwise agreed. Lavinia will arrive on time and give full attention to each session.</p>
+      </div>
+
+      <div class="policy-block">
+        <h4>Payment</h4>
+        <p>Payment is accepted via Zelle or Venmo. A 50% deposit is required to secure your session, with the remaining balance due upon completion. Packages must be paid in full before the first session begins.</p>
+      </div>
+
+      <div class="policy-block">
+        <h4>Cancellation Policy</h4>
+        <p>Please provide at least 24 hours notice for cancellations or rescheduling. Cancellations with less than 24 hours notice will forfeit the session deposit. Emergencies will be considered on a case-by-case basis.</p>
+      </div>
+
+      <div class="policy-block">
+        <h4>Health & Medical</h4>
+        <p>The client confirms that all information provided in the PAR-Q and intake form is accurate. If your health status changes at any time, please inform Lavinia before your next session. Lavinia is not a medical professional and her services do not replace medical advice.</p>
+      </div>
+
+      <div class="policy-block">
+        <h4>Confidentiality</h4>
+        <p>All personal information shared with Lavinia is kept strictly confidential and will never be shared with third parties without your explicit consent.</p>
+      </div>
+
+      <div class="policy-block">
+        <h4>Photography & Testimonials</h4>
+        <p>Lavinia will never take or share photos of clients or their homes without explicit written consent. Any testimonials shared publicly will be with your full approval.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="section-label">Liability Waiver</span>
+      <h2 class="section-title">Informed <em>Consent</em></h2>
+      <div class="section-divider"></div>
+
+      <p style="font-size: 0.88rem; line-height: 1.8; color: #4a453d; margin-bottom: 1.5rem;">Physical exercise involves inherent risks including, but not limited to, muscle soreness, injury, and in rare cases more serious medical events. By signing this agreement, you acknowledge these risks and take personal responsibility for your participation in training sessions.</p>
+
+      <label class="agree-item">
+        <input type="checkbox" name="agree_risk" required />
+        <span>I understand that exercise involves physical risk and I voluntarily choose to participate. I take full responsibility for my participation.</span>
+      </label>
+
+      <label class="agree-item">
+        <input type="checkbox" name="agree_health" required />
+        <span>I confirm that I have completed the PAR-Q health screening honestly and have disclosed all relevant medical conditions and injuries.</span>
+      </label>
+
+      <label class="agree-item">
+        <input type="checkbox" name="agree_policy" required />
+        <span>I have read and agree to the session, payment, and cancellation policies outlined above.</span>
+      </label>
+
+      <label class="agree-item">
+        <input type="checkbox" name="agree_liability" required />
+        <span>I release Lavinia Calumby from any liability for injuries, illness, or damages arising from my participation in training sessions, provided all reasonable safety precautions are followed.</span>
+      </label>
+
+      <label class="agree-item">
+        <input type="checkbox" name="agree_confidentiality" required />
+        <span>I understand that my personal information will be kept confidential and used only for the purpose of creating and delivering my training program.</span>
+      </label>
+    </div>
+
+    <div class="section">
+      <span class="section-label">Signature</span>
+      <h2 class="section-title">Sign & <em>Submit</em></h2>
+      <div class="section-divider"></div>
+
+      <p style="font-size: 0.88rem; line-height: 1.8; color: #4a453d; margin-bottom: 1.5rem;">By typing your full name and today's date below, you confirm that you have read, understood, and agreed to all terms in this agreement. Your typed name serves as your digital signature.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="sig_name">Full Name (Digital Signature) *</label>
+          <input type="text" id="sig_name" name="digital_signature" placeholder="Type your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="sig_date">Date *</label>
+          <input type="date" id="sig_date" name="signature_date" required />
+        </div>
+      </div>
+    </div>
+
+    <input type="hidden" name="_subject" value="Client Agreement Signed , Lavinia Calumby" />
+    <input type="hidden" name="_next" value="https://laviniacalumby.github.io" />
+
+    <div class="submit-section">
+      <button type="submit" class="submit-btn">Submit Signed Agreement</button>
+      <p class="submit-note">A copy of this agreement will be sent to lavinia@laviniacalumby.com. Please save this page for your own records.</p>
+    </div>
+
+  </form>
+</div>
+
+<footer>
+  <p>Lavinia <span>Calumby</span> · Greenwich, CT · lavinia@laviniacalumby.com</p>
+</footer>
+
+</body>
+</html>
