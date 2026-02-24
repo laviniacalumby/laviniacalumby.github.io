@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Wellness Guide — Lavinia Calumby</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #faf9f7; --off-white: #f4f1eb; --warm-gray: #e8e2d8;
+      --mid-gray: #a89e8e; --dark: #1c1a17; --accent: #8a7150;
+      --accent-light: #c9b48e; --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    body { background: var(--off-white); color: var(--dark); font-family: var(--font-body); font-weight: 300; line-height: 1.8; }
+
+    header { background: var(--dark); padding: 4rem 3rem; text-align: center; }
+    .logo { font-family: var(--font-display); font-size: 1.4rem; color: var(--white); letter-spacing: 0.06em; }
+    .logo span { font-style: italic; color: var(--accent-light); }
+    .doc-title { font-family: var(--font-display); font-size: 3.2rem; font-weight: 300; color: var(--white); margin-top: 1.5rem; line-height: 1.15; }
+    .doc-title em { font-style: italic; color: var(--accent-light); }
+    .doc-subtitle { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mid-gray); margin-top: 1rem; }
+    .client-name { font-family: var(--font-display); font-size: 1.2rem; color: var(--accent-light); margin-top: 1.5rem; font-style: italic; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 4rem 1.5rem 5rem; }
+
+    .opening { background: var(--white); border: 1px solid var(--warm-gray); padding: 3rem; margin-bottom: 3rem; text-align: center; }
+    .opening-quote { font-family: var(--font-display); font-size: 1.8rem; font-weight: 300; line-height: 1.4; color: var(--dark); margin-bottom: 1.5rem; }
+    .opening-quote em { font-style: italic; color: var(--accent); }
+    .opening-text { font-size: 0.95rem; color: #4a453d; max-width: 580px; margin: 0 auto; }
+
+    .practice-box { background: var(--dark); padding: 1.75rem 2rem; margin-top: 1.5rem; }
+    .practice-title { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 0.75rem; }
+    .practice-text { font-size: 0.9rem; color: #c5bfb5; line-height: 1.8; font-style: italic; }
+
+    .pillar { margin-bottom: 3rem; }
+    .pillar-header { background: var(--accent); padding: 2rem 2.5rem; display: flex; align-items: center; gap: 2rem; }
+    .pillar-number { font-family: var(--font-display); font-size: 4rem; font-weight: 300; color: rgba(255,255,255,0.2); line-height: 1; }
+    .pillar-info { }
+    .pillar-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 0.3rem; }
+    .pillar-title { font-family: var(--font-display); font-size: 2rem; color: var(--white); font-weight: 300; line-height: 1.2; }
+    .pillar-title em { font-style: italic; }
+
+    .pillar-body { background: var(--white); border: 1px solid var(--warm-gray); border-top: none; padding: 2.5rem; }
+    .pillar-intro { font-size: 1rem; color: #4a453d; margin-bottom: 2rem; line-height: 1.85; border-left: 3px solid var(--accent-light); padding-left: 1.5rem; }
+
+    .content-block { margin-bottom: 2rem; }
+    .content-block h4 { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .content-block p { font-size: 0.92rem; color: #4a453d; line-height: 1.85; margin-bottom: 0.75rem; }
+
+    .tip-list { list-style: none; margin-top: 0.75rem; }
+    .tip-list li { font-size: 0.9rem; color: #4a453d; padding: 0.6rem 0; border-bottom: 1px solid var(--off-white); padding-left: 1.5rem; position: relative; line-height: 1.7; }
+    .tip-list li::before { content: '✦'; position: absolute; left: 0; color: var(--accent-light); font-size: 0.6rem; top: 0.8rem; }
+
+    .practice-box { background: var(--off-white); border-left: 3px solid var(--accent); padding: 1.5rem 2rem; margin-top: 1.5rem; }
+    .practice-box-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .practice-box p { font-size: 0.88rem; color: #4a453d; line-height: 1.8; }
+
+    .foods-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .food-card { background: var(--off-white); padding: 1.25rem; border: 1px solid var(--warm-gray); }
+    .food-card h5 { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+    .food-card p { font-size: 0.82rem; color: #4a453d; line-height: 1.7; }
+
+    .affirmations { background: var(--dark); padding: 3rem; margin-bottom: 3rem; text-align: center; }
+    .affirmations-title { font-family: var(--font-display); font-size: 1.8rem; color: var(--white); font-weight: 300; margin-bottom: 2rem; }
+    .affirmations-title em { font-style: italic; color: var(--accent-light); }
+    .affirmation-list { display: flex; flex-direction: column; gap: 1rem; max-width: 560px; margin: 0 auto; }
+    .affirmation { font-family: var(--font-display); font-size: 1.1rem; color: var(--accent-light); font-style: italic; padding: 0.75rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+
+    .closing { background: var(--white); border: 1px solid var(--warm-gray); padding: 3rem; text-align: center; margin-bottom: 3rem; }
+    .closing h2 { font-family: var(--font-display); font-size: 2rem; font-weight: 300; margin-bottom: 1.5rem; }
+    .closing h2 em { font-style: italic; color: var(--accent); }
+    .closing p { font-size: 0.92rem; color: #4a453d; line-height: 1.85; max-width: 560px; margin: 0 auto 1rem; }
+    .closing-signature { font-family: var(--font-display); font-size: 1.4rem; font-style: italic; color: var(--accent); margin-top: 2rem; }
+
+    footer { text-align: center; padding: 2rem; font-size: 0.72rem; color: var(--mid-gray); }
+    footer span { font-family: var(--font-display); font-style: italic; color: var(--accent); }
+
+    @media (max-width: 650px) {
+      .foods-grid { grid-template-columns: 1fr; }
+      .pillar-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .pillar-number { font-size: 2.5rem; }
+      header { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Lavinia <span>Calumby</span></div>
+  <div class="doc-title">Your Personal <em>Wellness Guide</em></div>
+  <div class="doc-subtitle">Nourishment for your body, mind, and soul</div>
+  <div class="client-name">Prepared for [Client Name]</div>
+</header>
+
+<div class="container">
+
+  <div class="opening">
+    <div class="opening-quote">True wellness is not a destination. <em>It is the way you choose to live every single day.</em></div>
+    <p class="opening-text">This guide is rooted in the philosophy of the Institute for Integrative Nutrition, which teaches that real health goes far beyond what we eat. It is shaped by our relationships, our sense of purpose, how we rest, and how we speak to ourselves. My hope is that this becomes a living companion on your journey, something you return to again and again as life changes around you.</p>
+  </div>
+
+  <!-- BIO-INDIVIDUALITY -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-number">A</div>
+      <div class="pillar-info">
+        <div class="pillar-label">Core Principle</div>
+        <div class="pillar-title">The Power of <em>Bio-Individuality</em></div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">There is no one-size-fits-all approach to health. What works beautifully for your best friend may not work for you at all. This is the essence of bio-individuality — the understanding that each of us is a completely unique human being with different needs, history, genetics, culture, and life circumstances.</p>
+      <div class="content-block">
+        <h4>What This Means For You</h4>
+        <p>Your program is built entirely around who you are. Not a generic template. Not a plan designed for the average woman. A program that honors your unique body, your lifestyle, your preferences, and exactly where you are right now in your life.</p>
+        <p>This is why I spend time getting to know you deeply before we begin. Your intake form, our conversations, and your monthly check-ins all exist to help me understand you better so I can serve you better.</p>
+      </div>
+      <div class="content-block">
+        <h4>Bio-Individuality In Practice</h4>
+        <ul class="tip-list">
+          <li>One woman thrives on early morning workouts. Another does her best work in the evening. Both are right.</li>
+          <li>One woman feels energized by a plant-rich diet. Another needs more protein to feel her best. Both are valid.</li>
+          <li>One woman needs vigorous exercise to manage stress. Another needs gentle movement and rest. Both are healthy.</li>
+          <li>Your needs will also shift over time — with seasons, with stress, with hormones, with life. Your program evolves with you.</li>
+        </ul>
+      </div>
+      <div class="practice-box">
+        <div class="practice-title">A Moment to Reflect</div>
+        <p class="practice-text">Think about a health advice you followed that did not work for you. Was it truly wrong, or was it simply not designed for your unique body and life? What does your body actually feel best on?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MULTIDIMENSIONAL HEALTH -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-number">B</div>
+      <div class="pillar-info">
+        <div class="pillar-label">Core Principle</div>
+        <div class="pillar-title">Your <em>Multidimensional</em> Health</div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">True health is not just physical. It lives across every dimension of your life — your relationships, your career, your home, your creativity, your spirituality, your finances, your joy. When one area of your life suffers, everything else feels it. When one area thrives, it lifts everything around it.</p>
+      <div class="content-block">
+        <h4>The 12 Dimensions of Your Wellbeing</h4>
+        <p>IIN teaches us that health is multidimensional and that our lives are nourished — or depleted — across these twelve areas:</p>
+        <ul class="tip-list">
+          <li><strong>Health</strong> — your physical body, energy, and vitality</li>
+          <li><strong>Relationships</strong> — the quality of your connections with others</li>
+          <li><strong>Social Life</strong> — your sense of community and belonging</li>
+          <li><strong>Joy</strong> — how much delight and lightness you experience daily</li>
+          <li><strong>Spirituality</strong> — your connection to something greater than yourself</li>
+          <li><strong>Creativity</strong> — your outlet for self expression and imagination</li>
+          <li><strong>Finances</strong> — your relationship with money and financial security</li>
+          <li><strong>Career</strong> — your sense of purpose and fulfillment in your work</li>
+          <li><strong>Education</strong> — your commitment to growth and learning</li>
+          <li><strong>Home Environment</strong> — the space you live and rest in</li>
+          <li><strong>Home Cooking</strong> — your relationship with nourishing yourself through food</li>
+          <li><strong>Physical Activity</strong> — how you move and challenge your body</li>
+        </ul>
+      </div>
+      <div class="content-block">
+        <h4>Why This Matters</h4>
+        <p>A woman who is eating perfectly and training consistently but is deeply unhappy in her relationships or her career will still struggle to feel truly well. Health is holistic. When we work together we look at all of these dimensions — not just your workout and your food choices.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIRCLE OF LIFE -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-number">C</div>
+      <div class="pillar-info">
+        <div class="pillar-label">Your Starting Point</div>
+        <div class="pillar-title">The <em>Circle of Life</em> Assessment</div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">Before we begin your program, I invite you to complete your Circle of Life. This is one of IIN's most powerful tools — a visual snapshot of where you are thriving and where you are feeling depleted across the 12 dimensions of your life. Your circle will look completely different from anyone else's, and that is exactly the point.</p>
+      <div class="content-block">
+        <h4>How To Complete Your Circle</h4>
+        <ul class="tip-list">
+          <li><strong>Step 1</strong> — For each of the 12 areas, place a dot to indicate your current level of satisfaction. A dot toward the outside of the circle means high satisfaction. A dot toward the center means low satisfaction.</li>
+          <li><strong>Step 2</strong> — Connect all your dots to reveal your Circle of Life.</li>
+          <li><strong>Step 3</strong> — Look at your circle. Notice where it is full and where it feels empty. These gaps are not failures. They are simply areas ready for your attention and care.</li>
+        </ul>
+      </div>
+
+      <!-- INTERACTIVE CIRCLE -->
+      <div style="margin: 2rem 0; text-align: center;">
+        <canvas id="circleOfLife" width="420" height="420" style="max-width: 100%; cursor: pointer;"></canvas>
+        <p style="font-size: 0.8rem; color: var(--mid-gray); margin-top: 0.75rem;">Click on each section to rate your satisfaction from 1 (center) to 5 (outer edge)</p>
+        <button onclick="resetCircle()" style="margin-top: 1rem; font-family: var(--font-body); font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.6rem 1.5rem; background: var(--dark); color: var(--white); border: none; cursor: pointer;">Reset Circle</button>
+      </div>
+
+      <div class="content-block">
+        <h4>What To Do With Your Circle</h4>
+        <p>Share your completed circle with me. It helps me understand not just your physical goals but your whole life. Together we will identify one or two areas beyond fitness to focus on during your program because real transformation always comes from the inside out.</p>
+        <p>You can also complete this digitally at <strong>integrativenutrition.com/circle-of-life</strong></p>
+      </div>
+      <div class="practice-box">
+        <div class="practice-title">Your Reflection</div>
+        <p class="practice-text">Looking at your circle, which area surprises you the most? Which area, if improved, do you feel would have the biggest positive impact on everything else in your life?</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sections = ['Health','Physical Activity','Home Cooking','Home Environment','Creativity','Spirituality','Joy','Social Life','Relationships','Finances','Career','Education'];
+    const scores = new Array(12).fill(0);
+    const colors = ['#c9b48e','#b8a07a','#a89068','#c9b48e','#b8a07a','#a89068','#c9b48e','#b8a07a','#a89068','#c9b48e','#b8a07a','#a89068'];
+    const canvas = document.getElementById('circleOfLife');
+    const ctx = canvas.getContext('2d');
+    const cx = 210, cy = 210, maxR = 180, minR = 20;
+
+    function drawCircle() {
+      ctx.clearRect(0, 0, 420, 420);
+      const sliceAngle = (2 * Math.PI) / 12;
+
+      // Draw background slices
+      for (let i = 0; i < 12; i++) {
+        const startAngle = i * sliceAngle - Math.PI / 2;
+        const endAngle = startAngle + sliceAngle;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy);
+        ctx.arc(cx, cy, maxR, startAngle, endAngle);
+        ctx.closePath();
+        ctx.fillStyle = i % 2 === 0 ? '#f4f1eb' : '#e8e2d8';
+        ctx.fill();
+        ctx.strokeStyle = '#faf9f7';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      // Draw concentric rings
+      for (let r = 1; r <= 5; r++) {
+        const radius = minR + (r / 5) * (maxR - minR);
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, 2 * Math.PI);
+        ctx.strokeStyle = 'rgba(168,158,142,0.3)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+
+      // Draw filled scores
+      if (scores.some(s => s > 0)) {
+        ctx.beginPath();
+        for (let i = 0; i < 12; i++) {
+          const angle = i * sliceAngle - Math.PI / 2 + sliceAngle / 2;
+          const score = scores[i] || 0;
+          const r = score > 0 ? minR + (score / 5) * (maxR - minR) : minR;
+          const x = cx + r * Math.cos(angle);
+          const y = cy + r * Math.sin(angle);
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(138,113,80,0.25)';
+        ctx.fill();
+        ctx.strokeStyle = '#8a7150';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Dots
+        for (let i = 0; i < 12; i++) {
+          if (scores[i] > 0) {
+            const angle = i * sliceAngle - Math.PI / 2 + sliceAngle / 2;
+            const r = minR + (scores[i] / 5) * (maxR - minR);
+            ctx.beginPath();
+            ctx.arc(cx + r * Math.cos(angle), cy + r * Math.sin(angle), 5, 0, 2 * Math.PI);
+            ctx.fillStyle = '#8a7150';
+            ctx.fill();
+          }
+        }
+      }
+
+      // Labels
+      ctx.font = '9px DM Sans, sans-serif';
+      ctx.fillStyle = '#4a453d';
+      ctx.textAlign = 'center';
+      for (let i = 0; i < 12; i++) {
+        const angle = i * sliceAngle - Math.PI / 2 + sliceAngle / 2;
+        const labelR = maxR + 18;
+        const x = cx + labelR * Math.cos(angle);
+        const y = cy + labelR * Math.sin(angle);
+        ctx.fillText(sections[i], x, y + 3);
+      }
+    }
+
+    canvas.addEventListener('click', function(e) {
+      const rect = canvas.getBoundingClientRect();
+      const scaleX = canvas.width / rect.width;
+      const scaleY = canvas.height / rect.height;
+      const x = (e.clientX - rect.left) * scaleX - cx;
+      const y = (e.clientY - rect.top) * scaleY - cy;
+      const dist = Math.sqrt(x * x + y * y);
+      if (dist < minR || dist > maxR) return;
+
+      let angle = Math.atan2(y, x) + Math.PI / 2;
+      if (angle < 0) angle += 2 * Math.PI;
+      const sliceAngle = (2 * Math.PI) / 12;
+      const sectionIndex = Math.floor(angle / sliceAngle) % 12;
+      const score = Math.round(((dist - minR) / (maxR - minR)) * 5);
+      scores[sectionIndex] = Math.max(1, Math.min(5, score));
+      drawCircle();
+    });
+
+    function resetCircle() {
+      scores.fill(0);
+      drawCircle();
+    }
+
+    drawCircle();
+  </script>
+
+  <!-- PRIMARY FOOD CONCEPT -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-number">00</div>
+      <div class="pillar-info">
+        <div class="pillar-label">The Foundation</div>
+        <div class="pillar-title">Understanding <em>Primary Food</em></div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">At the Institute for Integrative Nutrition, we learn that the food on your plate is only one source of nourishment. What truly feeds us is what IIN calls Primary Food — the deeper dimensions of life that determine how we feel, how we show up, and how much joy we experience every day.</p>
+      <div class="content-block">
+        <h4>The Four Primary Foods</h4>
+        <p>When these four areas are in balance, food becomes secondary. When they are out of balance, no diet in the world will make you feel fully nourished.</p>
+        <ul class="tip-list">
+          <li><strong>Relationships</strong> — The quality of your connections with family, friends, and yourself. Do you feel seen, loved, and supported?</li>
+          <li><strong>Career and Purpose</strong> — Do you feel that your daily life has meaning? Are you doing work that aligns with your values?</li>
+          <li><strong>Physical Activity</strong> — Movement that you enjoy and that makes you feel alive, not punished.</li>
+          <li><strong>Spirituality</strong> — Your connection to something greater than yourself, whether that is faith, nature, meditation, or simply a sense of meaning.</li>
+        </ul>
+      </div>
+      <div class="practice-box">
+        <div class="practice-box-label">Reflection Practice</div>
+        <p>Take a moment to rate each of the four primary foods from 1 to 10 in your life right now. Where are you thriving? Where do you feel empty? This is your map. We will use it to guide our work together.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLAR 1: NOURISHMENT -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-number">01</div>
+      <div class="pillar-info">
+        <div class="pillar-label">Pillar One</div>
+        <div class="pillar-title">Nourishment — <em>Food as Medicine</em></div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">Food is not the enemy and it is not a reward. It is information for your body. Every bite you take either supports your energy, your hormones, your recovery and your mood, or it works against them. The goal is not perfection. It is awareness and progress.</p>
+
+      <div class="content-block">
+        <h4>Eat to Energize</h4>
+        <p>Rather than thinking about calories or restriction, I want you to think about energy. Ask yourself before every meal: will this food give me energy or take it away? Over time this simple question transforms your relationship with food completely.</p>
+        <ul class="tip-list">
+          <li>Prioritize protein at every meal to support muscle recovery and stabilize blood sugar.</li>
+          <li>Add healthy fats like avocado, olive oil, and nuts to support hormonal health.</li>
+          <li>Fill half your plate with colorful vegetables at lunch and dinner.</li>
+          <li>Eat slowly and without distraction. Your digestion begins in the mind.</li>
+          <li>Aim for 2.5 to 3 liters of water daily. Add lemon or electrolytes for extra benefit.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h4>Foods That Support Your Training</h4>
+        <div class="foods-grid">
+          <div class="food-card">
+            <h5>Before Training</h5>
+            <p>Oats with banana, Greek yogurt with berries, rice cakes with almond butter. Eat 1 to 2 hours before your session.</p>
+          </div>
+          <div class="food-card">
+            <h5>After Training</h5>
+            <p>Protein shake with fruit, eggs with whole grain toast, grilled chicken with sweet potato. Eat within 45 minutes of finishing.</p>
+          </div>
+          <div class="food-card">
+            <h5>All Day Long</h5>
+            <p>Leafy greens, berries, salmon, nuts, seeds, legumes, and plenty of water. These are your daily foundations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <h4>Anti-Inflammatory Eating</h4>
+        <p>Chronic inflammation is one of the biggest barriers to feeling your best. It affects your energy, your recovery, your mood, and your hormones. Supporting an anti-inflammatory lifestyle through food is one of the most powerful things you can do for your long term health.</p>
+        <ul class="tip-list">
+          <li>Reduce refined sugars and processed foods as much as possible.</li>
+          <li>Include omega-3 rich foods like salmon, walnuts, and flaxseed regularly.</li>
+          <li>Use turmeric, ginger, and garlic generously in your cooking.</li>
+          <li>Limit alcohol as it significantly impacts recovery, sleep, and hormone balance.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h4>A Note on Intuitive Eating</h4>
+        <p>No food plan works if it makes you feel deprived or anxious. My philosophy is built on listening to your body. Cravings are often messages, not weaknesses. When you crave sugar it may be a sign of stress, poor sleep, or imbalanced meals. When you crave salt it may signal dehydration or adrenal fatigue. Start listening before you judge.</p>
+      </div>
+
+      <div class="practice-box">
+        <div class="practice-box-label">This Week's Nutrition Practice</div>
+        <p>For the next 7 days, keep a simple food and energy journal. After each meal write down what you ate and how you felt 30 minutes later. You will start to see patterns that no nutrition plan could ever teach you.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLAR 2: MOVEMENT AND REST -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-number">02</div>
+      <div class="pillar-info">
+        <div class="pillar-label">Pillar Two</div>
+        <div class="pillar-title">Movement and <em>Rest</em></div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">Movement is medicine. But so is rest. The women I work with often push themselves too hard and rest too little, and then wonder why they are exhausted. Real transformation happens in the recovery, not in the effort. Learning to honor both is one of the most powerful shifts you can make.</p>
+
+      <div class="content-block">
+        <h4>Movement Beyond Our Sessions</h4>
+        <p>Your training sessions are just one piece of the puzzle. What you do between sessions matters enormously. Think of movement as a spectrum, not just a scheduled workout.</p>
+        <ul class="tip-list">
+          <li>Walk every day. Even 20 minutes of gentle walking supports lymphatic drainage, mental clarity, and cardiovascular health.</li>
+          <li>Stretch for 10 minutes before bed. This signals your nervous system that it is safe to rest.</li>
+          <li>Take breaks from sitting every hour. Stand up, move your body, breathe deeply.</li>
+          <li>Find movement you love beyond our sessions. Dancing, swimming, hiking, yoga. Joy is the best motivator.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h4>The Power of Rest and Recovery</h4>
+        <p>Your muscles do not grow during training. They grow while you sleep and rest. Every time you skip recovery you are leaving your results on the table. Rest is not laziness. It is strategy.</p>
+        <ul class="tip-list">
+          <li>Aim for 7 to 9 hours of sleep every night. This is non-negotiable for hormonal balance and recovery.</li>
+          <li>Create a wind-down routine. Screens off 30 minutes before bed, dim the lights, drink herbal tea.</li>
+          <li>Honor your rest days in your program. They are programmed for a reason.</li>
+          <li>Listen to your body. If you feel deeply fatigued, it is okay to rest instead of pushing through.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h4>Sleep and Your Hormones</h4>
+        <p>Poor sleep raises cortisol, the stress hormone, which makes it nearly impossible to lose body fat, build muscle, or feel energetic. It also disrupts leptin and ghrelin, the hormones that regulate hunger, which is why you crave sugar and processed food after a bad night's sleep. Protecting your sleep is one of the most powerful things you can do for your body.</p>
+      </div>
+
+      <div class="practice-box">
+        <div class="practice-box-label">This Week's Rest Practice</div>
+        <p>Create one new bedtime ritual this week. It could be a short gratitude journal, 5 minutes of deep breathing, or a cup of chamomile tea. Whatever feels nourishing. Do it every night for 7 days and notice what shifts.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLAR 3: STRESS AND EMOTIONAL WELLBEING -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-number">03</div>
+      <div class="pillar-info">
+        <div class="pillar-label">Pillar Three</div>
+        <div class="pillar-title">Stress and <em>Emotional Wellbeing</em></div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">Stress is the silent saboteur of every health goal. As a busy woman, a mother, a professional, you carry an enormous amount every single day. Learning to manage stress is not a luxury. It is a fundamental part of building a healthy, strong body and a life that feels sustainable.</p>
+
+      <div class="content-block">
+        <h4>Understanding Cortisol</h4>
+        <p>When you are chronically stressed your body produces high levels of cortisol. This signals your body to store fat, especially around the belly, slow your metabolism, break down muscle tissue, and disrupt your sleep and digestion. No amount of training or clean eating can overcome chronically elevated cortisol. Stress management is part of your fitness plan.</p>
+      </div>
+
+      <div class="content-block">
+        <h4>Simple Stress Management Tools</h4>
+        <ul class="tip-list">
+          <li><strong>Box Breathing</strong> — Inhale for 4 counts, hold for 4, exhale for 4, hold for 4. Do this for 2 minutes when you feel overwhelmed. It activates your parasympathetic nervous system immediately.</li>
+          <li><strong>The 5 Minute Brain Dump</strong> — Every morning write down everything in your head without editing. This clears mental clutter and reduces anxiety.</li>
+          <li><strong>Say No Without Guilt</strong> — Every time you say yes to something that drains you, you say no to something that fills you. Protecting your energy is not selfish. It is essential.</li>
+          <li><strong>Spend Time in Nature</strong> — Even 15 minutes outside reduces cortisol measurably. Walk barefoot on grass if you can. It sounds simple because it is.</li>
+          <li><strong>Move to Release, Not Punish</strong> — Exercise is one of the best stress relievers available. But only when it comes from a place of self-care, not self-punishment.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h4>Setting Boundaries for Your Health</h4>
+        <p>One of the most underrated wellness practices is learning to set boundaries. With your time, your energy, and your emotional availability. You cannot pour from an empty cup. The more you protect your energy, the more you have to give to the people and things that truly matter.</p>
+      </div>
+
+      <div class="practice-box">
+        <div class="practice-box-label">This Week's Stress Practice</div>
+        <p>Identify one thing in your life that is consistently draining your energy. It could be a commitment, a relationship dynamic, a habit, or a thought pattern. This week ask yourself: what is one small step I can take to reduce this drain?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLAR 4: PURPOSE AND JOY -->
+  <div class="pillar">
+    <div class="pillar-header">
+      <div class="pillar-number">04</div>
+      <div class="pillar-info">
+        <div class="pillar-label">Pillar Four</div>
+        <div class="pillar-title">Purpose, Joy, and <em>Meaningful Living</em></div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">This is the pillar most wellness programs completely ignore. And yet it is often the most transformative. When you feel a deep sense of purpose, when your life is filled with genuine joy and meaningful connection, your body responds. Your energy rises. Your relationship with food normalizes. You sleep better. You feel more motivated to take care of yourself.</p>
+
+      <div class="content-block">
+        <h4>What Fills You Up?</h4>
+        <p>Not what should fill you up according to someone else. What actually lights you up from the inside? When did you last feel truly alive, fully present, deeply happy? That feeling is your compass. Following it consistently is one of the most important health practices you can develop.</p>
+        <ul class="tip-list">
+          <li>Schedule joy the same way you schedule a workout. Protect it and show up for it.</li>
+          <li>Invest in relationships that energize you and gently release the ones that consistently drain you.</li>
+          <li>Create at least one daily ritual that is purely for you. Not for your family, not for your work. Just for you.</li>
+          <li>Do something creative regularly. Creativity is one of the most powerful stress relievers and joy generators we have access to.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h4>Building Daily Rituals That Sustain You</h4>
+        <p>A ritual is different from a routine. A routine is something you do automatically. A ritual is something you do with intention and presence. The most sustainable wellness habits are the ones that feel meaningful, not obligatory.</p>
+        <ul class="tip-list">
+          <li><strong>Morning</strong> — Start with 5 minutes of quiet before the demands of the day begin. No phone, no news. Just you and your breath.</li>
+          <li><strong>Midday</strong> — Take a genuine lunch break. Step away from screens. Eat slowly. Breathe.</li>
+          <li><strong>Evening</strong> — Create a transition ritual between work and home life. A walk, a shower, a few minutes of journaling. Let the day go before you enter family time.</li>
+          <li><strong>Weekly</strong> — Do one thing each week that is purely for pleasure. A massage, a walk in nature, cooking a beautiful meal, reading a book. Non-negotiable.</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h4>The Practice of Gratitude</h4>
+        <p>Research consistently shows that a regular gratitude practice rewires the brain toward positivity, reduces anxiety, improves sleep, and increases resilience. It does not require much. Just 3 things you are grateful for each morning or evening, written by hand. Over time this practice quietly transforms how you experience your life.</p>
+      </div>
+
+      <div class="practice-box">
+        <div class="practice-box-label">This Week's Joy Practice</div>
+        <p>Write down three things that bring you genuine joy that you have not done recently. This week, do at least one of them. Notice how it affects your energy, your mood, and your motivation to take care of yourself.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HABIT BUILDING -->
+  <div class="pillar">
+    <div class="pillar-header" style="background: var(--dark);">
+      <div class="pillar-number">05</div>
+      <div class="pillar-info">
+        <div class="pillar-label">Bringing It All Together</div>
+        <div class="pillar-title">Building Habits <em>That Stick</em></div>
+      </div>
+    </div>
+    <div class="pillar-body">
+      <p class="pillar-intro">Knowledge alone does not create change. Habits do. The goal is not to overhaul your entire life overnight. It is to build small, consistent actions that compound over time into the life and body you are stepping into.</p>
+
+      <div class="content-block">
+        <h4>The 1% Rule</h4>
+        <p>You do not need to be 100% better tomorrow. You just need to be 1% better today. One extra glass of water. One extra hour of sleep. One more vegetable on your plate. One moment of stillness. These tiny improvements compound into extraordinary transformation over time.</p>
+      </div>
+
+      <div class="content-block">
+        <h4>Your Daily Non-Negotiables</h4>
+        <p>Choose 3 to 5 daily habits that you commit to regardless of how busy life gets. These are your anchors. Everything else can be flexible, but these stay.</p>
+        <ul class="tip-list">
+          <li>Drink at least 2.5 liters of water</li>
+          <li>Move your body in some way, even just a 20 minute walk</li>
+          <li>Eat at least one nourishing, home-prepared meal</li>
+          <li>Get to bed by [your personal target time]</li>
+          <li>Take 5 minutes of stillness or quiet for yourself</li>
+        </ul>
+      </div>
+
+      <div class="content-block">
+        <h4>When You Fall Off Track</h4>
+        <p>You will have days when nothing goes according to plan. That is not failure. That is life. The only thing that matters is what you do next. Not next week. Not Monday. The very next meal, the very next choice, the very next moment. Get back up gently, without judgment, and keep going.</p>
+      </div>
+
+      <div class="practice-box">
+        <div class="practice-box-label">Your Personal Commitment</div>
+        <p>Write down your 3 daily non-negotiables below. Share them with me at our next session. Putting them in writing and sharing them with someone increases your likelihood of following through by over 60%.</p>
+        <br/>
+        <p>1. _______________________________________________</p>
+        <br/>
+        <p>2. _______________________________________________</p>
+        <br/>
+        <p>3. _______________________________________________</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- AFFIRMATIONS -->
+  <div class="affirmations">
+    <div class="affirmations-title">Words to <em>Carry With You</em></div>
+    <div class="affirmation-list">
+      <div class="affirmation">"I am worthy of the energy and effort it takes to feel well."</div>
+      <div class="affirmation">"Taking care of myself makes me more, not less, for the people I love."</div>
+      <div class="affirmation">"I am not starting over. I am always moving forward."</div>
+      <div class="affirmation">"My body is not a problem to be solved. It is a home to be honored."</div>
+      <div class="affirmation">"Progress is happening even when I cannot see it."</div>
+      <div class="affirmation">"I choose to nourish myself today."</div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <h2>You are already <em>enough.</em></h2>
+    <p>This program is not about becoming someone different. It is about becoming more fully yourself. Stronger, more energized, more at home in your body, and more deeply connected to the life you want to live.</p>
+    <p>I am honored to be part of your journey. Please reach out to me anytime at lavinia@laviniacalumby.com. I am here not just for the sessions, but for all of it.</p>
+    <div class="closing-signature">With love, Lavinia</div>
+  </div>
+
+</div>
+
+<footer>
+  <p>Lavinia <span>Calumby</span> · NASM Certified Personal Trainer · IIN Certified Health Coach · Greenwich, CT</p>
+</footer>
+
+</body>
+</html>
