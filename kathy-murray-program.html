@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your 4-Week Program Lavinia Calumby</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--dark:#1c1a17;--dark2:#2a2722;--accent:#8a7150;--accent-light:#c9b48e;--off-white:#f4f1eb;--warm-gray:#e8e2d8;--mid-gray:#a89e8e;--text:#4a453d;--white:#faf9f7;--font-d:'Cormorant Garamond',serif;--font-b:'DM Sans',sans-serif}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--off-white);color:var(--dark);font-family:var(--font-b);font-weight:300;line-height:1.6}
+    header{background:var(--dark);padding:3rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+    header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(138,113,80,.18) 0%,transparent 70%);pointer-events:none}
+    .logo{font-family:var(--font-d);font-size:1rem;color:var(--accent-light);letter-spacing:.15em;margin-bottom:.75rem;font-style:italic}
+    header h1{font-family:var(--font-d);font-size:clamp(2rem,6vw,3.2rem);font-weight:300;color:var(--white);line-height:1.15}
+    header h1 em{font-style:italic;color:var(--accent-light)}
+    .header-meta{display:flex;justify-content:center;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap}
+    .meta-pill{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid-gray);padding:.4rem 1rem;border:1px solid rgba(201,180,142,.2)}
+    .container{max-width:860px;margin:0 auto;padding:3rem 1.5rem 5rem}
+    .intro-box{background:var(--dark);padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden}
+    .intro-box::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(201,180,142,.08) 0%,transparent 70%)}
+    .intro-box h2{font-family:var(--font-d);font-size:1.6rem;font-weight:300;color:var(--white);margin-bottom:1rem}
+    .intro-box h2 em{font-style:italic;color:var(--accent-light)}
+    .intro-box p{font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.85;margin-bottom:.75rem}
+    .intro-box p:last-child{margin-bottom:0}
+    .principles{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:1.5rem}
+    .principle{background:rgba(255,255,255,.04);border:1px solid rgba(201,180,142,.15);padding:1rem 1.25rem}
+    .principle-label{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-light);margin-bottom:.4rem}
+    .principle p{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.65}
+    .week-section{margin-bottom:3rem}
+    .week-header{background:var(--white);border:1px solid var(--warm-gray);padding:1.75rem 2rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+    .week-header.w1{border-left:3px solid #8a7150}
+    .week-header.w2{border-left:3px solid #7a8a50}
+    .week-header.w3{border-left:3px solid #507a8a}
+    .week-header.w4{border-left:3px solid #8a508a}
+    .week-label{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+    .week-title{font-family:var(--font-d);font-size:1.8rem;font-weight:300;color:var(--dark);line-height:1.15}
+    .week-title em{font-style:italic}
+    .week-desc{font-size:.85rem;color:var(--text);margin-top:.5rem;max-width:500px;line-height:1.7}
+    .week-rpe{text-align:right}
+    .rpe-label{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:.3rem}
+    .rpe-value{font-family:var(--font-d);font-size:2rem;color:var(--accent)}
+    .days-grid{display:flex;flex-direction:column;gap:.75rem}
+    .day-card{background:var(--white);border:1px solid var(--warm-gray)}
+    .day-card.rest{background:var(--off-white);border-style:dashed}
+    .day-header{padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none}
+    .day-header:hover{background:rgba(138,113,80,.04)}
+    .day-left{display:flex;align-items:center;gap:1rem}
+    .day-num{font-family:var(--font-d);font-size:1.4rem;color:var(--accent-light);min-width:28px}
+    .day-title{font-size:.82rem;font-weight:400;color:var(--dark);letter-spacing:.04em}
+    .day-focus{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:.15rem}
+    .day-duration{font-size:.68rem;color:var(--mid-gray);letter-spacing:.08em}
+    .day-toggle{font-size:.75rem;color:var(--accent);opacity:.6;transition:transform .2s}
+    .day-body{display:none;border-top:1px solid var(--warm-gray);padding:1.5rem}
+    .day-body.open{display:block}
+    .day-toggle.open{transform:rotate(180deg)}
+    .phase{margin-bottom:1.5rem}
+    .phase:last-child{margin-bottom:0}
+    .phase-label{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;padding-bottom:.4rem;border-bottom:1px solid var(--warm-gray)}
+    .exercise-row{display:grid;grid-template-columns:1fr auto;gap:1rem;padding:.6rem 0;border-bottom:1px solid var(--off-white);align-items:start}
+    .exercise-row:last-child{border-bottom:none}
+    .ex-name{font-size:.88rem;color:var(--dark);font-weight:400}
+    .ex-cue{font-size:.78rem;color:var(--text);margin-top:.2rem;line-height:1.55;font-style:italic}
+    .ex-sets{font-size:.8rem;color:var(--accent);white-space:nowrap;text-align:right;font-weight:400}
+    .ex-note{font-size:.75rem;color:var(--mid-gray);text-align:right;margin-top:.15rem}
+    .rest-card-inner{padding:1.5rem;text-align:center}
+    .rest-card-inner p{font-size:.88rem;color:var(--mid-gray);font-style:italic}
+    .cardio-card{background:var(--white);border:1px solid rgba(138,113,80,.35);border-left:3px solid var(--accent)}
+    .cardio-card .day-title{color:var(--accent)}
+    .cardio-inner{padding:1.25rem 1.5rem;font-size:.86rem;color:var(--text);line-height:1.75}
+    .breathwork-box{background:var(--dark);padding:1.25rem;margin-top:1rem}
+    .breathwork-box p{font-size:.82rem;color:rgba(255,255,255,.7);line-height:1.7}
+    .breathwork-box strong{color:var(--accent-light);font-weight:400}
+    .peri-box{background:rgba(138,113,80,.08);border:1px solid rgba(138,113,80,.2);padding:1.1rem 1.25rem;margin-top:1rem}
+    .peri-box p{font-size:.82rem;color:var(--text);line-height:1.7}
+    .peri-box strong{color:var(--accent);font-weight:500}
+    .notes-section{background:var(--white);border:1px solid var(--warm-gray);padding:2rem;margin-top:3rem}
+    .notes-section h3{font-family:var(--font-d);font-size:1.4rem;font-weight:300;margin-bottom:1rem}
+    .notes-section h3 em{font-style:italic;color:var(--accent)}
+    .note-block{border-left:2px solid var(--accent-light);padding:.75rem 1rem;margin-bottom:.75rem;background:var(--off-white)}
+    .note-block h4{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+    .note-block p{font-size:.85rem;color:var(--text);line-height:1.7}
+    .ex-rest{font-size:.72rem;color:var(--accent);text-align:right;margin-top:.1rem;letter-spacing:.04em;}
+    footer{text-align:center;padding:2rem;font-size:.72rem;color:var(--mid-gray)}
+    footer span{font-family:var(--font-d);font-style:italic;color:var(--accent)}
+    .note-header{display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;padding:.1rem 0}
+    .note-header:hover h4{color:var(--accent)}
+    .note-header h4{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:0;transition:color .2s}
+    .note-toggle{font-size:.7rem;color:var(--accent);opacity:.7;transition:transform .25s;flex-shrink:0;margin-left:.75rem}
+    .collapsible-note{cursor:pointer}
+    .note-body{margin-top:.6rem}
+    .note-open{background:var(--white)}
+    @media(max-width:600px){.week-header{flex-direction:column}.week-rpe{text-align:left}.day-body{padding:1rem}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Lavinia Calumby</div>
+  <h1><em>Kathy,</em> Your 4-Week <em>Program</em></h1>
+  <div class="header-meta">
+    <div class="meta-pill">Kathy Murray</div>
+    <div class="meta-pill">47 · Perimenopause</div>
+    <div class="meta-pill">4 Days per Week</div>
+    <div class="meta-pill">Early Morning · 45–55 min</div>
+    <div class="meta-pill">Manhattan · Building Gym</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="intro-box" style="margin-bottom:2rem">
+    <h2>Before You <em>Start</em></h2>
+    <p>Kathy, you are a businesswoman running a company, with two kids, and managing everything that comes with life in Manhattan. Your schedule is relentless and your stress is real. This program is built around that truth. You do not need to read this entire document at once. Open it each morning before your session, find your day, and follow it. That is all.</p>
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-label">01 Warm Up First</div>
+        <p>Every session starts with 3 to 5 minutes on the treadmill or bike before anything else. You are training at 6am. Your body needs this especially your joints and connective tissue.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-label">02 Low Energy Days</div>
+        <p>If you slept under 4 hours or feel genuinely depleted, do your activation and 20 minutes easy cardio only and go home. One modified session protects weeks of progress. Do not push through real exhaustion.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-label">03 Check In Every Friday</div>
+        <p>Send me a quick message or voice note: your energy this week out of 10, your key weights, and one thing that felt hard or that you have a question about. That is it. This keeps everything on track.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MINDSET BOX -->
+  <div class="intro-box" style="margin-bottom:2rem;background:#2a2722;border-left:3px solid #c9b48e;">
+    <h2>The <em>One Rule</em> Inside the Gym</h2>
+    <p style="color:rgba(255,255,255,.85);font-size:.95rem;line-height:1.9;margin-bottom:1.25rem">You spend your days split across ten things at once. The gym is the one place where that changes. When you walk in, your job, your phone, your mental to-do list, none of it belongs here. This hour is yours. It is also the mechanism through which everything you want from this program actually happens.</p>
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-label">Put the Phone Away</div>
+        <p>Not face down. Away. Every time you pick it up between sets, your nervous system re-enters work mode and cortisol rises. You already walk in with cortisol elevated from stress and poor sleep. The gym is where you lower it, not maintain it. Your phone can wait 50 minutes.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Mind-Muscle Connection</div>
+        <p>The research is clear: consciously thinking about the muscle you are training during each rep increases activation by up to 60%. This is not motivational language, it is neuroscience. When you do a hip thrust, feel your glute contract. When you row, feel your back. Slow down enough to feel it. That is where the results live.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Follow the Rest Times</div>
+        <p>Every session has rest times written in for a reason. They are not suggestions. Too little rest and your muscles cannot generate the force needed for the next set, you are training fatigue instead of strength. Too much rest and you lose the metabolic and hormonal benefits of the session. Set a timer. Rest exactly as written. Then go.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Be Here</div>
+        <p>You have 45 to 55 minutes. That is all this asks of you. For those minutes, be completely present. No half-reps while thinking about a meeting. No distracted sets. Full attention, full effort, full presence. The transformation you are here for happens in those fully-present moments, not in the ones where your mind is somewhere else.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-box">
+    <h2>Built <em>For Kathy</em></h2>
+    <p>You are building a business, showing up for your kids, and navigating a major hormonal transition, all at the same time. That is a lot to carry. This program is designed to work with your life as it actually is, not a quieter version of it.</p>
+    <p>Perimenopause changes everything: how you build muscle, how you recover, how your body responds to stress. We work with that, not against it. Every session is purposeful, fits your schedule, and respects your energy. No chest work or planks throughout. Your upper body push days focus on shoulders and triceps. Core work is deep and functional, the kind that actually rebuilds the connection you have noticed weakening.</p>
+    <div class="principles">
+      <div class="principle">
+        <div class="principle-label">Priority 01</div>
+        <p>Rebuild core strength and muscle tone, specifically addressing perimenopausal muscle loss in the midsection</p>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Priority 02</div>
+        <p>Lower body strength and tone, glutes, legs, and hip stability for longevity and metabolic health</p>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Priority 03</div>
+        <p>Stress regulation and energy, every session ends with a deliberate wind-down. You train hard, then you let go.</p>
+      </div>
+      <div class="principle">
+        <div class="principle-label">Your Sleep</div>
+        <p>If you are waking between 3 and 4am and cannot get back to sleep, you are not alone and there is nothing wrong with you. This is one of the most common experiences women describe at this stage of life. This program includes specific tools to support better sleep quality, and you will find them in the notes.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ WEEK 1 ═══════════ -->
+  <div class="week-section">
+    <div class="week-header w1">
+      <div>
+        <div class="week-label">Week 01 of 04</div>
+        <div class="week-title">Re<em>establish</em></div>
+        <div class="week-desc">Reconnect with your body, establish movement patterns, and find your baseline. Weights should feel challenging but never maximal this week. You are building the foundation everything else will be loaded onto.</div>
+      </div>
+      <div class="week-rpe"><div class="rpe-label">Target RPE</div><div class="rpe-value">6–7</div></div>
+    </div>
+
+    <div class="days-grid">
+      <!-- MONDAY -->
+      <div class="day-card cardio-card">
+        <div class="day-header">
+          <div class="day-left">
+            <div class="day-num">MON</div>
+            <div><div class="day-title">LISS Cardio</div><div class="day-focus">Low Intensity Steady State · Heart Health · Fat Metabolism</div></div>
+          </div>
+          <div class="day-duration">30 min</div>
+        </div>
+        <div class="cardio-inner">
+          <p>30 minutes at low intensity. Incline treadmill walk, light bike, or elliptical. Heart rate 50–60% of max (you can hold a conversation comfortably). This supports cardiovascular health and fat metabolism without spiking cortisol. No pushing. No rushing. This is active recovery that works for you.</p>
+        </div>
+      </div>
+
+      <!-- TUESDAY -->
+      <div class="day-card cardio-card">
+        <div class="day-header">
+          <div class="day-left">
+            <div class="day-num">TUE</div>
+            <div><div class="day-title">Rest or Walk</div><div class="day-focus">Full Rest · Outdoor Walk · Light Movement</div></div>
+          </div>
+          <div class="day-duration">Optional</div>
+        </div>
+        <div class="cardio-inner">
+          <p>Full rest or a 20–30 minute outdoor walk. No gym. Fresh air, natural light, and easy movement support your cortisol rhythm and energy for the week ahead. Do not skip rest it is part of the program.</p>
+        </div>
+      </div>
+
+
+      <!-- WEDNESDAY -->
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left">
+            <div class="day-num">WED</div>
+            <div><div class="day-title">Lower Body Glutes & Legs</div><div class="day-focus">Hip Hinge · Squats · Glute Activation</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">50–55 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Activation 10 min Non-Negotiable</div>
+            <div class="exercise-row"><div><div class="ex-name">90/90 Breathing</div><div class="ex-cue">Lie on back, knees bent. Inhale to expand ribcage. Exhale fully and feel your deep core gently draw in. This reconnects your nervous system before we load it.</div></div><div><div class="ex-sets">5 breaths</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Dead Bug</div><div class="ex-cue">Lower back pressed to floor throughout. Slow exhale as you extend arm and leg. This is core work not a warm up.</div></div><div><div class="ex-sets">3 × 6 each side</div><div class="ex-note">3 sec each direction</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Glute Bridge with Hold</div><div class="ex-cue">Drive through heels. Squeeze glutes for 3 seconds at the top. Feel the glute not the lower back.</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">3 sec hold</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Clamshell with Band</div><div class="ex-cue">Pelvis stays still. Only the knee opens. Feel the outer glute activate.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">2 × 12 each side</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Primary</div>
+            <div class="exercise-row"><div><div class="ex-name">Romanian Deadlift</div><div class="ex-cue">Push hips back. Flat back. Weights close to legs. Feel the hamstring stretch. This is your main posterior chain builder find the connection before adding load.</div></div><div><div class="ex-sets">4 × 10</div><div class="ex-note">Moderate weight · 3 sec down</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Goblet Squat</div><div class="ex-cue">Chest tall. Sit back and down. Full depth if comfortable. Drive through the whole foot to stand.</div></div><div><div class="ex-sets">4 × 10</div><div class="ex-note">Moderate weight</div><div class="ex-rest">90 sec rest</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Secondary</div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Thrust</div><div class="ex-cue">Drive through heels. 2 second squeeze at the top every rep. This is the most effective glute exercise prioritize the contraction over the load.</div></div><div><div class="ex-sets">4 × 12</div><div class="ex-note">2 sec squeeze</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Reverse Lunge</div><div class="ex-cue">Long step back. Torso upright. Drive through the front heel to stand. Keep pelvis level.</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">3 × 10 each side</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Accessory</div>
+            <div class="exercise-row"><div><div class="ex-name">Leg Curl</div><div class="ex-cue">Hips flat on bench. Squeeze at the top. 3 seconds lowering down.</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Standing Calf Raise</div><div class="ex-cue">Full range. Rise as high as possible, lower below step level. 3 seconds down.</div></div><div><div class="ex-sets">3 × 15</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Cool Down 5 min</div>
+            <div class="exercise-row"><div><div class="ex-name">Figure 4 Stretch</div><div class="ex-cue">90 seconds each side. Breathe deeply into the hip. This directly targets the piriformis a common stress-holder.</div></div><div><div class="ex-sets">90 sec each</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Child's Pose with Deep Breathing</div><div class="ex-cue">Arms extended. 5 slow breaths. Let your nervous system shift from sympathetic to parasympathetic before you walk out.</div></div><div><div class="ex-sets">5 breaths</div></div></div>
+          </div>
+          <div class="breathwork-box">
+            <p><strong>Breathing on every rep:</strong> Exhale on the effort. Inhale on the return. This activates your deep core on every rep and keeps cortisol from spiking during training especially important at your stage of life.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- THURSDAY -->
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left">
+            <div class="day-num">THU</div>
+            <div><div class="day-title">Upper Body Pull & Shoulders</div><div class="day-focus">Back · Rear Shoulders · Biceps · Core</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">45–50 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Activation 12 min: Shoulder Prep Added</div>
+            <div class="exercise-row"><div><div class="ex-name">Bird Dog</div><div class="ex-cue">Hips level throughout. Exhale as you extend. This builds the deep spinal stabilizers the core muscles most affected by perimenopause.</div></div><div><div class="ex-sets">3 × 8 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Band Pull Apart</div><div class="ex-cue">Squeeze shoulder blades together. Pre-activates the rear delts and rotator cuff before loading.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">2 × 15</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Wall Slide</div><div class="ex-cue">Stand with your back flat against a wall, arms in a goalpost position. Slowly slide arms overhead keeping the entire arm in contact with the wall. This restores scapular upward rotation before any vertical pulling. Non-negotiable at 6am.</div><div class="ex-rest">30 sec rest</div></div><div><div class="ex-sets">2 × 10</div><div class="ex-note">Slow and controlled</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Thoracic Extension over Foam Roller</div><div class="ex-cue">Place the foam roller across your mid-back (not lower back). Support your head with your hands. Gently extend over the roller and breathe. Opens the thoracic spine before overhead loading. Cold morning joints need this.</div></div><div><div class="ex-sets">30 sec hold</div><div class="ex-note">Breathe deeply</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Banded External Rotation</div><div class="ex-cue">Band anchored at elbow height. Upper arm pinned to your side, elbow bent 90°. Rotate forearm outward against the band. Primes the rotator cuff before heavy pulling. Start light, this should feel easy.</div><div class="ex-rest">30 sec rest</div></div><div><div class="ex-sets">2 × 15 each side</div><div class="ex-note">Light band</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Primary</div>
+            <div class="exercise-row"><div><div class="ex-name">Lat Pulldown</div><div class="ex-cue">Drive elbows down toward hips. Chest tall. Squeeze at the bottom. 3 seconds back up.</div></div><div><div class="ex-sets">4 × 10</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Seated Cable Row</div><div class="ex-cue">Sit tall throughout. Drive elbows back. Squeeze shoulder blades together at the end. Do not round forward on the return.</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">4 × 10</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Secondary</div>
+            <div class="exercise-row"><div><div class="ex-name">Dumbbell Row</div><div class="ex-cue">One hand on bench. Elbow drives to hip. Full extension at the bottom. Squeeze shoulder blade at the top.</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">3 × 12 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Dumbbell Overhead Press</div><div class="ex-cue">Core braced. Press slightly in front of you not straight overhead. 3 seconds lowering down. Builds the shoulder strength that improves posture and upper body tone.</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">Light-moderate · 3 sec down</div><div class="ex-rest">90 sec rest</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Accessory Arms & Rear Shoulder</div>
+            <div class="exercise-row"><div><div class="ex-name">Face Pull</div><div class="ex-cue">Pull toward your face. Elbows finish high and wide. Light weight. Protects the rotator cuff and builds the rear shoulder definition.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 15</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Hammer Curl</div><div class="ex-cue">Elbows pinned to sides. 3 seconds lowering down. Full extension at the bottom.</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Pallof Press</div><div class="ex-cue">Resist the rotation. Exhale as you press out. Deep core work without any spinal compression.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 10 each side</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Cool Down</div>
+            <div class="exercise-row"><div><div class="ex-name">Chest and Shoulder Stretch</div><div class="ex-cue">Doorway or cable machine. 60 seconds. Breathe deeply. Counter the pulling work.</div></div><div><div class="ex-sets">60 sec</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Neck Rolls and Deep Breathing</div><div class="ex-cue">Slow. Deliberate. This is your cortisol reset before the rest of your day begins.</div></div><div><div class="ex-sets">2 min</div></div></div>
+          </div>
+          <div class="peri-box">
+            <p><strong>Perimenopause note:</strong> Upper back and posture muscles weaken faster than most women realize during this transition. Prioritizing rows and pulling movements directly counteracts this and the posture improvements are visible within weeks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRIDAY -->
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left">
+            <div class="day-num">FRI</div>
+            <div><div class="day-title">Core & Full Body Strength</div><div class="day-focus">Deep Core · Glutes · Mobility · Stress Reset</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">45–50 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Activation & Breathing 12 min</div>
+            <div class="exercise-row"><div><div class="ex-name">90/90 Breathing Extended</div><div class="ex-cue">This session starts slower and more deliberately. 8 full breaths. Exhale for longer than you inhale. This is the session where we also train your nervous system.</div></div><div><div class="ex-sets">8 breaths</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Dead Bug Slow</div><div class="ex-cue">5 second exhale as you extend. The longest, slowest dead bugs of the week. Feel every layer of your core.</div></div><div><div class="ex-sets">3 × 8 each side</div><div class="ex-note">5 sec exhale</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Bird Dog</div><div class="ex-cue">Focus on hips staying perfectly level. 3 second hold at extension.</div></div><div><div class="ex-sets">3 × 8 each side</div><div class="ex-note">3 sec hold</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Core No Planks, No Crunches</div>
+            <div class="exercise-row"><div><div class="ex-name">Pallof Press Standing</div><div class="ex-cue">The anti-rotation demand here trains the deep core exactly as it functions in real life resisting force, not just flexing.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">McGill Curl Up</div><div class="ex-cue">Hands under lower back to maintain natural curve. Lift head and shoulders only 2–3 inches. Hold 8 seconds. This is not a crunch it is research-backed spine-safe core work.</div></div><div><div class="ex-sets">3 × 8</div><div class="ex-note">8 sec hold each</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Suitcase Carry</div><div class="ex-cue">Heavy dumbbell in one hand. Walk tall. Do not lean. The anti-lateral flexion demand trains the obliques and deep stabilizers simultaneously.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 20m each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Side Plank Modified on Knee</div><div class="ex-cue">Bottom knee on floor. Top leg straight. Hips up. Body in a straight line from knee to head. Hold and breathe steadily.</div></div><div><div class="ex-sets">3 × 20 sec each</div><div class="ex-note">Modified knee on floor</div><div class="ex-rest">60 sec rest</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Shoulder & Arm Accessory, Upper Body Only</div>
+            <div class="peri-box" style="margin-bottom:.75rem"><p><strong>Recovery note:</strong> Lower body compounds have been moved off Friday to protect recovery. You train lower body Wednesday and Saturday, adding leg work here would mean three lower body sessions in four days on top of poor sleep and high cortisol. This is the smarter choice. Friday is now a true core and shoulder day.</p></div>
+            <div class="exercise-row"><div><div class="ex-name">Lateral Raise</div><div class="ex-cue">Slight forward lean. Lead with elbows. 3 seconds lowering. Light weight. This isolates the medial deltoid, the muscle responsible for shoulder width and definition.</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Overhead Tricep Extension</div><div class="ex-cue">Elbows point forward. Feel the stretch at the bottom of each rep. Slow 3-second lowering. No chest involvement.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">3 sec eccentric</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Hammer Curl</div><div class="ex-cue">Elbows pinned to sides. 3 seconds lowering. Full extension at the bottom. Works the brachialis for arm thickness.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">3 sec eccentric</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Cool Down Extended 8 min</div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Flexor Stretch</div><div class="ex-cue">Kneeling lunge. 90 seconds each side. Breathe into the front of the hip. This muscle tightens with stress and sitting releasing it reduces lower back tension.</div></div><div><div class="ex-sets">90 sec each</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Seated Spinal Twist</div><div class="ex-cue">Gentle rotation. Hold 60 seconds each side. Breathe. This is your active recovery from a demanding week.</div></div><div><div class="ex-sets">60 sec each</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Savasana Breathing</div><div class="ex-cue">Lie on your back. 10 slow breaths. Inhale 4 counts. Exhale 6 counts. This is not optional it is the stress regulation training your body needs.</div></div><div><div class="ex-sets">10 breaths</div></div></div>
+          </div>
+          <div class="peri-box">
+            <p><strong>Why this session exists:</strong> High cortisol from chronic stress actively breaks down muscle and deposits fat around the midsection especially in perimenopause. This session trains your body to work hard AND recover. Both are equally important.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SATURDAY -->
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left">
+            <div class="day-num">SAT</div>
+            <div><div class="day-title">Lower Body Volume & Isolation</div><div class="day-focus">Glutes · Legs · Single Leg Work · Arms</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">50–55 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Activation 10 min</div>
+            <div class="exercise-row"><div><div class="ex-name">90/90 Breathing</div></div><div><div class="ex-sets">5 breaths</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Lateral Band Walk</div><div class="ex-cue">Stay low. Controlled steps. Outer hip and glute medius activation.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">2 × 12 each direction</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Glute Bridge with Band</div><div class="ex-cue">Band above knees. Drive knees out against the band throughout. Feel the glute and outer hip together.</div></div><div><div class="ex-sets">2 × 12</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Primary Glute Loading</div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Thrust</div><div class="ex-cue">Heavier than Wednesday if the connection was solid. 2 second squeeze at the top. This is your main glute builder of the week.</div></div><div><div class="ex-sets">4 × 10</div><div class="ex-note">2 sec squeeze · Progressive load</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Sumo Squat</div><div class="ex-cue">Wide stance. Lower straight down between your legs. Squeeze inner thighs and glutes at the top. Great for the inner thigh and glute together.</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">4 × 12</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Secondary Single Leg & Isolation</div>
+            <div class="exercise-row"><div><div class="ex-name">Single Leg Glute Bridge</div><div class="ex-cue">Hips level. Drive through the heel. Feel the difference between your two sides this is important information about your pelvic stability.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 10 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Cable Kickback</div><div class="ex-cue">Slight hinge forward. Squeeze the glute at the top for 1 second. Slow return.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Leg Press High Foot Position</div><div class="ex-cue">Feet high on platform to shift emphasis to glutes. Full range. Exhale on every press.</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">3 × 12</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Accessory Arms</div>
+            <div class="exercise-row"><div><div class="ex-name">Tricep Pushdown</div><div class="ex-cue">Elbows pinned. Full extension. Squeeze at the bottom. Arms work without any chest involvement.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Bicep Curl</div><div class="ex-cue">Elbows pinned to sides. 3 seconds down. Full range.</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Seated Calf Raise</div><div class="ex-cue">Targets the soleus specifically. Full range. 3 seconds down.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 15</div></div></div>
+          </div>
+          
+          <div class="phase">
+            <div class="phase-label">Zone 2 Cardio · End of Session</div>
+            <div class="exercise-row"><div><div class="ex-name">Treadmill, Bike, or Elliptical</div><div class="ex-cue">20 minutes immediately after training. Pace where you can speak in short sentences but feel the effort. Heart rate 60–70% of max. This is the most effective cardio for perimenopausal metabolic health and cardiovascular longevity.</div></div><div><div class="ex-sets">20 min</div><div class="ex-note">Zone 2 · 60–70% HR</div></div></div>
+          </div>
+<div class="phase">
+            <div class="phase-label">Cool Down</div>
+            <div class="exercise-row"><div><div class="ex-name">Pigeon Pose</div><div class="ex-cue">2 minutes each side. Deep glute and hip stretch. Breathe into any tension you find.</div></div><div><div class="ex-sets">2 min each</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Full Body Scan Breathing</div><div class="ex-cue">Lie on your back. Scan from head to feet and consciously release tension. End of week reset.</div></div><div><div class="ex-sets">5 breaths</div></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════════ WEEK 2 ═══════════ -->
+  <div class="week-section">
+    <div class="week-header w2">
+      <div>
+        <div class="week-label">Week 02 of 04</div>
+        <div class="week-title"><em>Build</em></div>
+        <div class="week-desc">Increase weights by 5–10% on all compound movements where last week felt controlled at RPE 7. New exercises introduced. The patterns are established now we load them. <strong>If Week 1 felt harder than expected or energy was particularly poor, stay at Week 1 loads before increasing. This is a completely legitimate training decision, extending the build phase produces better results than forcing heavier loads on an under-recovered nervous system.</strong></div>
+      </div>
+      <div class="week-rpe"><div class="rpe-label">Target RPE</div><div class="rpe-value">7–8</div></div>
+    </div>
+
+    <div class="days-grid">
+      <!-- MONDAY -->
+      <div class="day-card cardio-card">
+        <div class="day-header">
+          <div class="day-left">
+            <div class="day-num">MON</div>
+            <div><div class="day-title">LISS Cardio</div><div class="day-focus">Low Intensity Steady State · Heart Health · Fat Metabolism</div></div>
+          </div>
+          <div class="day-duration">30 min</div>
+        </div>
+        <div class="cardio-inner">
+          <p>30 minutes at low intensity. Incline treadmill walk, light bike, or elliptical. Heart rate 50–60% of max (you can hold a conversation comfortably). This supports cardiovascular health and fat metabolism without spiking cortisol. No pushing. No rushing. This is active recovery that works for you.</p>
+        </div>
+      </div>
+
+      <!-- TUESDAY -->
+      <div class="day-card cardio-card">
+        <div class="day-header">
+          <div class="day-left">
+            <div class="day-num">TUE</div>
+            <div><div class="day-title">Rest or Walk</div><div class="day-focus">Full Rest · Outdoor Walk · Light Movement</div></div>
+          </div>
+          <div class="day-duration">Optional</div>
+        </div>
+        <div class="cardio-inner">
+          <p>Full rest or a 20–30 minute outdoor walk. No gym. Fresh air, natural light, and easy movement support your cortisol rhythm and energy for the week ahead. Do not skip rest it is part of the program.</p>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">WED</div><div><div class="day-title">Lower Body Progressive Load</div><div class="day-focus">Heavier RDL · Bulgarian Split Squat Intro</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">50–55 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Warm Up 5 min then Activation (Same Protocol)</div>
+            <div class="exercise-row"><div><div class="ex-name">90/90 Breathing + Dead Bug + Glute Bridge with Band + Clamshell</div></div><div><div class="ex-sets">Full activation</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Primary Add Load</div>
+            <div class="exercise-row"><div><div class="ex-name">Romanian Deadlift</div><div class="ex-cue">5–10% heavier than Week 1. Same perfect form. 3 second eccentric. Track your weight.</div></div><div><div class="ex-sets">4 × 8</div><div class="ex-note">Heavier · 3 sec down</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Goblet Squat Heavier</div><div class="ex-cue">Add load from last week. Full depth. Exhale powerfully on the drive up.</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">4 × 8</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Secondary New Exercise</div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Thrust Progressive Load</div></div><div><div class="ex-sets">4 × 10</div><div class="ex-note">Heavier · 2 sec squeeze</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Bulgarian Split Squat</div><div class="ex-cue">New this week. Back foot on bench. Drive through the front heel. Start with bodyweight learn the pattern before loading it.</div></div><div><div class="ex-sets">3 × 8 each side</div><div class="ex-note">Bodyweight first</div><div class="ex-rest">90 sec rest</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Accessory</div>
+            <div class="exercise-row"><div><div class="ex-name">Leg Curl</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Single Leg Calf Raise</div><div class="ex-cue">One foot at a time. Full range. 3 seconds down. Significantly harder reduce weight from the bilateral version.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12 each</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">THU</div><div><div class="day-title">Upper Body Pull & Shoulders</div><div class="day-focus">More Volume · New Movements</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">45–50 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Activation 12 min: Full Shoulder Prep Protocol</div>
+            <div class="exercise-row"><div><div class="ex-name">Bird Dog + Band Pull Apart</div><div class="ex-cue">Same as Week 1. These become your anchors, consistent activation builds a reliable baseline.</div></div><div><div class="ex-sets">Standard reps</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Wall Slide</div><div class="ex-cue">Arms in goalpost position against the wall. Slide overhead while keeping full arm contact. This week focus on the range, try to get the full extension without compensation.</div><div class="ex-rest">30 sec rest</div></div><div><div class="ex-sets">2 × 10</div><div class="ex-note">Full range goal</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Thoracic Extension over Foam Roller</div><div class="ex-cue">Mid-back on foam roller. Support your head. Extend and breathe. 30 seconds is enough to open the thoracic before the heavier pulling loads this week.</div></div><div><div class="ex-sets">30 sec hold</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Banded External Rotation</div><div class="ex-cue">Upper arm pinned. Rotate outward against the band. Your pulling loads are heavier this week, this prep protects the rotator cuff.</div><div class="ex-rest">30 sec rest</div></div><div><div class="ex-sets">2 × 15 each side</div><div class="ex-note">Light-medium band</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Primary Add Load</div>
+            <div class="exercise-row"><div><div class="ex-name">Lat Pulldown Heavier</div><div class="ex-cue">Add weight from last week. Full range. Drive elbows to hips. 3 second eccentric.</div></div><div><div class="ex-sets">4 × 8</div><div class="ex-note">Heavier · 3 sec eccentric</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Assisted Pull Up</div><div class="ex-cue">New this week. Use a band or machine. Pull shoulder blades down first. Drive elbows to hips. 3–4 seconds lowering. This is a significant upgrade.</div></div><div><div class="ex-sets">3 × 6</div><div class="ex-note">Assisted · 3–4 sec eccentric</div><div class="ex-rest">90 sec rest</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Secondary</div>
+            <div class="exercise-row"><div><div class="ex-name">Seated Cable Row Heavier</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">4 × 10</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Arnold Press</div><div class="ex-cue">New this week. The rotation targets all three deltoid heads. Smooth continuous movement from palms facing you to palms facing forward.</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">3 × 10</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Accessory</div>
+            <div class="exercise-row"><div><div class="ex-name">Rear Delt Fly</div><div class="ex-cue">Hinge forward 45°. Light weight. Raise arms wide. Squeeze shoulder blades. 3–4 seconds down.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Concentration Curl</div><div class="ex-cue">Arm against inner thigh. Zero momentum. Squeeze hard at the top. Best bicep peak builder.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 10 each</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Pallof Press</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12 each side</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">FRI</div><div><div class="day-title">Core & Full Body Build</div><div class="day-focus">Progressive Core Load · More Strength Volume</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">45–50 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Warm Up 5 min then Activation and Breathing</div>
+            <div class="exercise-row"><div><div class="ex-name">90/90 Breathing + Dead Bug Extended + Bird Dog</div></div><div><div class="ex-sets">Full activation</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Core Progress from Week 1</div>
+            <div class="exercise-row"><div><div class="ex-name">Pallof Press Heavier Band or More Weight</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">McGill Curl Up</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">10 sec hold each</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Suitcase Carry Heavier</div><div class="ex-cue">More weight than Week 1. Stay tall. No leaning.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 25m each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Side Plank Modified</div><div class="ex-cue">Add 5 seconds to the hold time from last week.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 25 sec each</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Shoulder & Arm Accessory, Upper Body Only</div>
+            <div class="exercise-row"><div><div class="ex-name">Lateral Raise</div><div class="ex-cue">Slight forward lean. Lead with elbows. 3 seconds lowering. Add a small amount of load from Week 1.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">Slightly heavier · 3 sec eccentric</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Overhead Tricep Extension</div><div class="ex-cue">Elbows point forward. Feel the stretch at the bottom. Add a small amount of load from Week 1. 3-second lowering.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">Slightly heavier · 3 sec eccentric</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Hammer Curl</div><div class="ex-cue">Elbows pinned to sides. 3 seconds lowering. Full extension at the bottom. Slightly heavier than Week 1.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">3 sec eccentric</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Cool Down Extended</div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Flexor + Spinal Twist + Savasana Breathing</div></div><div><div class="ex-sets">8 min total</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">SAT</div><div><div class="day-title">Lower Body Volume Day</div><div class="day-focus">Peak Glute Volume · New Single Leg Work</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">50–55 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Activation</div>
+            <div class="exercise-row"><div><div class="ex-name">Lateral Band Walk + Glute Bridge with Band + Clamshell</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">Full activation</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Primary</div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Thrust Add Load</div></div><div><div class="ex-sets">5 × 10</div><div class="ex-note">Heavier · 2 sec squeeze</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Curtsy Lunge</div><div class="ex-cue">New this week. Step back and across. Targets the gluteus medius specifically. Keep front knee forward.</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">3 × 10 each side</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Secondary</div>
+            <div class="exercise-row"><div><div class="ex-name">Single Leg RDL</div><div class="ex-cue">New this week. Bodyweight to start. Body forms a T. Hips square. This is a balance and stability challenge as much as a strength one.</div></div><div><div class="ex-sets">3 × 8 each side</div><div class="ex-note">Bodyweight</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Leg Press</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">4 × 10</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Cable Kickback</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12 each side</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Accessory</div>
+            <div class="exercise-row"><div><div class="ex-name">Tricep Pushdown</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Lateral Raise</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Seated Calf Raise</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 15</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ WEEK 3 ═══════════ -->
+  <div class="week-section">
+    <div class="week-header w3">
+      <div>
+        <div class="week-label">Week 03 of 04</div>
+        <div class="week-title">Over<em>load</em></div>
+        <div class="week-desc">Maximum progressive overload. Heaviest loads of the cycle. Increase weight on every compound lift where Week 2 felt controlled. This is the hardest week and the most important one for results.</div>
+      </div>
+      <div class="week-rpe"><div class="rpe-label">Target RPE</div><div class="rpe-value">8–9</div></div>
+    </div>
+
+    <div class="days-grid">
+      <!-- MONDAY -->
+      <div class="day-card cardio-card">
+        <div class="day-header">
+          <div class="day-left">
+            <div class="day-num">MON</div>
+            <div><div class="day-title">LISS Cardio</div><div class="day-focus">Low Intensity Steady State · Heart Health · Fat Metabolism</div></div>
+          </div>
+          <div class="day-duration">30 min</div>
+        </div>
+        <div class="cardio-inner">
+          <p>30 minutes at low intensity. Incline treadmill walk, light bike, or elliptical. Heart rate 50–60% of max (you can hold a conversation comfortably). This supports cardiovascular health and fat metabolism without spiking cortisol. No pushing. No rushing. This is active recovery that works for you.</p>
+        </div>
+      </div>
+
+      <!-- TUESDAY -->
+      <div class="day-card cardio-card">
+        <div class="day-header">
+          <div class="day-left">
+            <div class="day-num">TUE</div>
+            <div><div class="day-title">Rest or Walk</div><div class="day-focus">Full Rest · Outdoor Walk · Light Movement</div></div>
+          </div>
+          <div class="day-duration">Optional</div>
+        </div>
+        <div class="cardio-inner">
+          <p>Full rest or a 20–30 minute outdoor walk. No gym. Fresh air, natural light, and easy movement support your cortisol rhythm and energy for the week ahead. Do not skip rest it is part of the program.</p>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">WED</div><div><div class="day-title">Lower Body Heavy</div><div class="day-focus">Maximum Load Week</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">55–60 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Warm Up 5 min then Activation (Same Protocol)</div>
+            <div class="exercise-row"><div><div class="ex-name">Full activation circuit</div></div><div><div class="ex-sets">10 min</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Primary Peak Load</div>
+            <div class="exercise-row"><div><div class="ex-name">Romanian Deadlift</div><div class="ex-cue">Heaviest yet. Perfect form is non-negotiable. 3 second eccentric. This is where your strength is measured.</div></div><div><div class="ex-sets">5 × 6</div><div class="ex-note">Heavy · RPE 8–9</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Goblet Squat Heaviest</div></div><div><div class="ex-sets">5 × 6</div><div class="ex-note">Heaviest weight</div><div class="ex-rest">90 sec rest</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Secondary</div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Thrust Peak Load</div><div class="ex-cue">Heaviest of the program. 2 second squeeze. Your glutes have been building for 3 weeks.</div></div><div><div class="ex-sets">5 × 8</div><div class="ex-note">Heaviest load</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Bulgarian Split Squat Add Dumbbells</div><div class="ex-cue">Pattern is established. Now we load it. Control down 3 seconds.</div></div><div><div class="ex-sets">4 × 8 each side</div><div class="ex-note">Add dumbbells</div><div class="ex-rest">90 sec rest</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Accessory</div>
+            <div class="exercise-row"><div><div class="ex-name">Leg Curl</div></div><div><div class="ex-sets">4 × 10</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Single Leg Calf Raise</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 15 each</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">THU</div><div><div class="day-title">Upper Body Heavy Pull & Shoulders</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">50–55 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Activation</div>
+            <div class="exercise-row"><div><div class="ex-name">Bird Dog + Band Pull Apart</div></div><div><div class="ex-sets">Standard</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Wall Slide</div><div class="ex-cue">Week 3: push for full overhead range with arms staying flush to the wall. This is harder than it looks. That's the point.</div><div class="ex-rest">30 sec rest</div></div><div><div class="ex-sets">2 × 10</div><div class="ex-note">Full range</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Thoracic Extension over Foam Roller</div><div class="ex-cue">Peak week means peak loads. Opening the thoracic spine before the heaviest overhead press of the cycle is not optional this week.</div></div><div><div class="ex-sets">30 sec hold</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Banded External Rotation</div><div class="ex-cue">You are pressing and pulling your heaviest loads this week. This takes 90 seconds and keeps your rotator cuff healthy. Do it every time.</div><div class="ex-rest">30 sec rest</div></div><div><div class="ex-sets">2 × 15 each side</div><div class="ex-note">Light-medium band</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Primary</div>
+            <div class="exercise-row"><div><div class="ex-name">Lat Pulldown Heaviest</div></div><div><div class="ex-sets">5 × 6</div><div class="ex-note">Heaviest · 3 sec eccentric</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Assisted Pull Up Less Assistance</div><div class="ex-cue">Reduce the band assistance or machine counterweight from last week. Progress toward a full pull up.</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">4 × 6</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Secondary</div>
+            <div class="exercise-row"><div><div class="ex-name">Dumbbell Row Heavy</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">4 × 8 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Overhead Press Heaviest Yet</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">4 × 8</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Accessory</div>
+            <div class="exercise-row"><div><div class="ex-name">Face Pull</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 15</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Hammer Curl Heavy</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Overhead Tricep Extension</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Pallof Press</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12 each side</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">FRI</div><div><div class="day-title">Core & Full Body Peak Week</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">50 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Warm Up 5 min then Activation and Breathing</div>
+            <div class="exercise-row"><div><div class="ex-name">Full breathing and core activation protocol</div></div><div><div class="ex-sets">12 min</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Core Peak Load</div>
+            <div class="exercise-row"><div><div class="ex-name">Pallof Press Heaviest</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">4 × 12 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">McGill Curl Up</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">10 sec hold</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Suitcase Carry Heaviest</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 30m each</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Side Plank Modified</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 30 sec each</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Shoulder & Arm Accessory, Upper Body Only</div>
+            <div class="exercise-row"><div><div class="ex-name">Lateral Raise</div><div class="ex-cue">Peak week. Use your heaviest lateral raise weight yet. Control every rep, 3 seconds down. Volume and load both increase this week.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">4 × 12</div><div class="ex-note">Heaviest yet · 3 sec eccentric</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Overhead Tricep Extension</div><div class="ex-cue">Peak load this week. Elbows point forward. Full stretch at the bottom. Slow and controlled even when it's heavy.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">Heaviest yet</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Hammer Curl</div><div class="ex-cue">Heaviest hammer curl of the program. Elbows pinned. 3 seconds lowering. Do not cheat the range.</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">Heaviest · 3 sec eccentric</div></div></div>
+          </div>
+          
+          <div class="phase">
+            <div class="phase-label">Zone 2 Cardio · End of Session</div>
+            <div class="exercise-row"><div><div class="ex-name">Treadmill, Bike, or Elliptical</div><div class="ex-cue">20 minutes immediately after training. Pace where you can speak in short sentences but feel the effort. Heart rate 60–70% of max. This is the most effective cardio for perimenopausal metabolic health and cardiovascular longevity.</div></div><div><div class="ex-sets">20 min</div><div class="ex-note">Zone 2 · 60–70% HR</div></div></div>
+          </div>
+<div class="phase">
+            <div class="phase-label">Cool Down Extended Non-Negotiable This Week</div>
+            <div class="exercise-row"><div><div class="ex-name">Full cool down protocol</div><div class="ex-cue">Week 3 is the highest stress week of the cycle. The cool down is even more important than usual. Do not skip it.</div></div><div><div class="ex-sets">10 min</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">SAT</div><div><div class="day-title">Lower Body Peak Volume</div><div class="day-focus">Highest Glute Volume of the Cycle</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">55–60 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Activation</div>
+            <div class="exercise-row"><div><div class="ex-name">Full glute activation circuit</div></div><div><div class="ex-sets">10 min</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Primary Peak Week</div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Thrust Heaviest of the Program</div><div class="ex-cue">This is your peak. 3 weeks of building has led here. Load it. Drive through heels. 2 second squeeze every rep.</div></div><div><div class="ex-sets">5 × 8</div><div class="ex-note">Heaviest weight · 2 sec squeeze</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Single Leg RDL Add Light Dumbbell</div></div><div><div class="ex-sets">4 × 8 each side</div><div class="ex-note">Light dumbbell</div><div class="ex-rest">90 sec rest</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Secondary</div>
+            <div class="exercise-row"><div><div class="ex-name">Curtsy Lunge Add Dumbbells</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">3 × 12 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Sumo Squat Heavy</div><div class="ex-rest">90 sec rest</div></div><div><div class="ex-sets">4 × 10</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Cable Kickback</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 15 each side</div></div></div>
+          </div>
+          <div class="phase">
+            <div class="phase-label">Accessory</div>
+            <div class="exercise-row"><div><div class="ex-name">Tricep Pushdown</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 12</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Bicep Curl</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">Heavy · 3 sec eccentric</div><div class="ex-rest">60 sec rest</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ WEEK 4 ═══════════ -->
+  <div class="week-section">
+    <div class="week-header w4">
+      <div>
+        <div class="week-label">Week 04 of 04</div>
+        <div class="week-title">De<em>load</em></div>
+        <div class="week-desc">Cut weight to 50% of Week 3. Same exercises, same structure, half the load. This is not a rest week it is an adaptation week. The muscle is built now. Let your body consolidate it. You will start the next cycle stronger than you began this one.</div>
+      </div>
+      <div class="week-rpe"><div class="rpe-label">Target RPE</div><div class="rpe-value">5–6</div></div>
+    </div>
+
+    <div class="days-grid">
+      <!-- MONDAY -->
+      <div class="day-card cardio-card">
+        <div class="day-header">
+          <div class="day-left">
+            <div class="day-num">MON</div>
+            <div><div class="day-title">LISS Cardio</div><div class="day-focus">Low Intensity Steady State · Heart Health · Fat Metabolism</div></div>
+          </div>
+          <div class="day-duration">30 min</div>
+        </div>
+        <div class="cardio-inner">
+          <p>30 minutes at low intensity. Incline treadmill walk, light bike, or elliptical. Heart rate 50–60% of max (you can hold a conversation comfortably). This supports cardiovascular health and fat metabolism without spiking cortisol. No pushing. No rushing. This is active recovery that works for you.</p>
+        </div>
+      </div>
+
+      <!-- TUESDAY -->
+      <div class="day-card cardio-card">
+        <div class="day-header">
+          <div class="day-left">
+            <div class="day-num">TUE</div>
+            <div><div class="day-title">Rest or Walk</div><div class="day-focus">Full Rest · Outdoor Walk · Light Movement</div></div>
+          </div>
+          <div class="day-duration">Optional</div>
+        </div>
+        <div class="cardio-inner">
+          <p>Full rest or a 20–30 minute outdoor walk. No gym. Fresh air, natural light, and easy movement support your cortisol rhythm and energy for the week ahead. Do not skip rest it is part of the program.</p>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">WED</div><div><div class="day-title">Lower Body Deload</div><div class="day-focus">50% Load · Quality Over Intensity</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">45 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Full Session Light and Intentional</div>
+            <div class="exercise-row"><div><div class="ex-name">Full Activation Circuit</div></div><div><div class="ex-sets">10 min</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Romanian Deadlift</div><div class="ex-cue">50% of Week 3 weight. Slow and perfect. Notice how light it feels this is deload working correctly.</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">50% load</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Goblet Squat</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">50% load</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Thrust</div><div class="ex-cue">Lighter load. Focus entirely on the squeeze the contraction over the weight.</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">50% load</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Leg Curl</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">Light</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Extended Cool Down</div><div class="ex-cue">Extra 5 minutes of stretching this week. You have worked hard honor the recovery.</div></div><div><div class="ex-sets">10 min</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">THU</div><div><div class="day-title">Upper Body Deload</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">40–45 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Full Session Light Loads</div>
+            <div class="exercise-row"><div><div class="ex-name">Lat Pulldown</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">50% load</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Seated Row</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">50% load</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Dumbbell Row</div></div><div><div class="ex-sets">3 × 10 each</div><div class="ex-note">Light</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Overhead Press</div></div><div><div class="ex-sets">3 × 10</div><div class="ex-note">Light</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Face Pull + Band Pull Apart</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 15 each</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Bicep Curl + Tricep Pushdown</div></div><div><div class="ex-sets">3 × 12 each</div><div class="ex-note">Light</div><div class="ex-rest">60 sec rest</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">FRI</div><div><div class="day-title">Core & Mobility Deload</div><div class="day-focus">Full Nervous System Reset</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">40 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Full Session Restore and Reset</div>
+            <div class="exercise-row"><div><div class="ex-name">Extended 90/90 Breathing</div><div class="ex-cue">10 breaths. This is the most important part of Friday this week.</div></div><div><div class="ex-sets">10 breaths</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Dead Bug + Bird Dog</div></div><div><div class="ex-sets">3 × 8 each</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Pallof Press Light</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 10 each side</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Suitcase Carry Light</div><div class="ex-rest">60 sec rest</div></div><div><div class="ex-sets">3 × 20m each</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Full Mobility Sequence</div><div class="ex-cue">Hip flexors, spinal twist, figure 4, pigeon, hamstring stretch. 90 seconds each. Full body restoration.</div></div><div><div class="ex-sets">15 min</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Savasana Extended</div><div class="ex-cue">5 minutes. Just breathe. You completed a full training cycle. This moment is part of the work.</div></div><div><div class="ex-sets">5 min</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day-card">
+        <div class="day-header" onclick="toggleDay(this)">
+          <div class="day-left"><div class="day-num">SAT</div><div><div class="day-title">Lower Body Deload</div></div></div>
+          <div style="display:flex;align-items:center;gap:1rem"><div class="day-duration">40–45 min</div><div class="day-toggle">▼</div></div>
+        </div>
+        <div class="day-body">
+          <div class="phase">
+            <div class="phase-label">Full Session Light and Intentional</div>
+            <div class="exercise-row"><div><div class="ex-name">Hip Thrust</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">50% load</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Sumo Squat</div></div><div><div class="ex-sets">3 × 12</div><div class="ex-note">Light</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Curtsy Lunge</div></div><div><div class="ex-sets">3 × 10 each</div><div class="ex-note">Bodyweight</div><div class="ex-rest">90 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Cable Kickback</div></div><div><div class="ex-sets">3 × 12 each</div><div class="ex-note">Light</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Lateral Raise + Tricep Pushdown</div></div><div><div class="ex-sets">3 × 12 each</div><div class="ex-note">Light</div><div class="ex-rest">60 sec rest</div></div></div>
+            <div class="exercise-row"><div><div class="ex-name">Full Cool Down</div><div class="ex-cue">End of cycle. Pigeon, hip flexors, spinal twist. End with 5 slow breaths lying down. You did this.</div></div><div><div class="ex-sets">10 min</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTES -->
+  <div class="notes-section">
+    <h3>Program <em>Notes</em></h3>
+    <p style="font-size:.82rem;color:var(--mid-gray);margin-bottom:1.25rem;font-style:italic">Tap any note to expand it. Read them in your own time, not all at once.</p>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Perimenopause &amp; Muscle</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Declining estrogen directly reduces muscle protein synthesis which is why you have noticed changes in your core over the last year. Resistance training with progressive overload is the most evidence-backed intervention for reversing this. This program is built specifically around that science. Consistency over 3–6 months is where the real transformation happens.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Sleep: Why This Stage of Life Affects It and What Actually Helps</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Many women going through perimenopause describe the same thing: falling asleep without much trouble, then waking somewhere between 3 and 4am with a mind that immediately starts running. It feels frustrating, but it makes complete sense given where your body is right now. As estrogen and progesterone shift during this transition, the hormonal signals that normally keep sleep deep and steady become less consistent. Your body also tends to release its natural morning wake signal earlier than it used to. Add a high-demand life on top of that and rest becomes genuinely harder to hold onto. The good news is that this responds well to the right habits. This program builds several of them in directly: the breathwork and cool-down at the end of every session are not just recovery tools, they are signals to your nervous system that it is safe to rest. The magnesium glycinate in the notes supports deeper sleep from the inside. And keeping a consistent wake time, even on weekends, is one of the most reliable ways to gradually reset the pattern. This will not change overnight. But with consistent training, better recovery habits, and the sleep tools in these notes, most women notice a real difference within four to six weeks.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Sleep &amp; Cortisol: Practical Tools</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>At 5–6 hours of sleep per night your cortisol is elevated before you even walk into the gym. This means recovery is harder, fat loss is harder, and muscle building is harder. The breathing and cool down work in this program is not optional, it is a direct intervention on your cortisol levels. Two evidence-based tools to add immediately: first, magnesium glycinate 300–400mg taken 60 minutes before bed. This is the best-absorbed form for sleep quality, supports HPA axis regulation, and directly improves deep sleep in perimenopausal women. Second, set a consistent wake time 7 days a week including weekends. A fixed wake time is the single most effective sleep intervention in the research. It resets your circadian rhythm faster than anything else. Cool dark room. Phone off. Sleep is the mechanism through which your training produces results.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Protein</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>During perimenopause your protein needs increase. Aim for a minimum of 1.6g per kg of bodyweight per day, ideally closer to 2g. Spread across 3–4 meals. This is non-negotiable for the muscle building this program is designed to deliver.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Pre and Post Workout Nutrition: Training at 6am Changes Everything</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Training fasted at 6am with low sleep and elevated cortisol puts your body in a catabolic state before you even walk in. Two simple interventions change this. Pre-workout (15–30 min before): 20–30g fast-digesting protein, Greek yogurt, a protein shake, or cottage cheese. Post-workout (within 30–45 min): 30–40g protein combined with 30–40g carbohydrates. The carbs matter here: post-exercise carbohydrates directly blunt the cortisol spike that follows training. A banana and a protein shake, or rice cakes with Greek yogurt, are ideal. This is not about calories, it is about managing your hormonal environment around training.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Creatine Monohydrate: The Most Important Supplement for This Program</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Creatine monohydrate is the most evidence-supported supplement for women in perimenopause pursuing muscle and strength. The research is consistent: 3–5g daily increases lean muscle mass, improves strength output, supports bone mineral density, and has demonstrated benefits for cognitive function during hormonal transition. This is not a bodybuilder supplement. It is the one supplement the science most clearly supports for exactly what this program is trying to do. Take 3–5g daily, timing does not matter, consistency does. Plain creatine monohydrate powder, no added sugar or caffeine. Start alongside Week 1 and do not stop between cycles.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>No Chest Work: Upper Body Strategy</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>All pushing movements have been replaced with shoulder press, tricep, and overhead work. You will build strong, toned arms and defined shoulders without any chest involvement. The pulling work, rows, lat pulldowns, assisted pull-ups, provides the upper body volume and balance the program needs.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Core Work: Why No Crunches or Planks</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>The core work in this program, dead bugs, bird dogs, Pallof press, McGill curl-ups, suitcase carries, targets the deep core musculature most affected by perimenopause. It rebuilds function and strength without spinal compression or pelvic floor demand. This is the right approach for where your body is right now.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Time: Your Biggest Past Obstacle</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Every session fits in 45–55 minutes including warm-up and cool-down. The cool-down is included in that time, not added to it. The schedule is built around your life in Manhattan, not the other way around.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Progressive Overload: Track Your Weights</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Write down what you lift every session. The program works because each week you ask slightly more of your body than the week before. Without tracking you are guessing. A simple notes app on your phone is all you need.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Cardiovascular Warm-Up: Every Session</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Before every session spend 3–5 minutes on a treadmill walk, light bike, or elliptical. At 47 and training at 6am your core temperature is low and your connective tissue is cold. Loading cold joints increases injury risk dramatically. Keep it light: the goal is to raise your heart rate to 50–55% and break a light sweat before the activation work begins. This is injury prevention, not optional.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>RPE: How to Use It</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>RPE stands for Rate of Perceived Exertion on a scale of 1–10. RPE 6 means you are working but could keep going comfortably. RPE 8 means you have 2 more reps left before failure. RPE 9 means you have 1 rep left. In perimenopause your perceived exertion can vary dramatically week to week depending on sleep, stress, and hormones. The RPE targets in this program are guidelines not rules. If Week 2 loads feel like RPE 9 instead of 7, keep those loads for another week before increasing. Your body is the authority.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Hydration and Electrolytes</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Aim for a minimum of 2.5–3 liters of water daily. At your stress level, sleep deprivation, and training volume you are very likely chronically under-hydrated without realizing it. Perimenopausal women lose electrolytes faster than average. Add electrolytes around training, a pinch of sea salt and a squeeze of lemon is enough, or a quality electrolyte supplement with no added sugar. Dehydration directly reduces energy, focus, and strength, three things you are already managing carefully.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Low Energy Days: What to Do</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>There will be mornings where full training is the wrong choice. If you slept under 4 hours or feel genuinely depleted, do not attempt the full session. Do your activation protocol, 20 minutes of LISS cardio, and go home. This is not failure, it is smart training. Consistency over months matters far more than any single session. Pushing through genuine depletion raises cortisol, increases injury risk, and sets back recovery.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Week 3 Self-Regulation</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Week 3 is the most demanding week of the cycle. If Week 2 felt harder than expected or your energy and sleep were particularly poor, you have full permission to repeat Week 2 loads in Week 3 rather than increasing. This extends the cycle to 5 weeks before the deload and is a completely legitimate training decision. Forcing heavier loads on an under-recovered nervous system produces worse results than extending the build phase. More is not always more.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Weekly Check-In Protocol</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Every Friday send me a brief check-in. Three things: your energy levels this week out of 10, the weights you used on your key lifts (hip thrust, RDL, lat pulldown), and one thing that felt challenging or that you have a question about. Voice note or message, whichever is easier. This keeps the program responsive to how your body is actually adapting.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Cardio Strategy</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>At stress level 8 with 5–6 hours of sleep, high intensity cardio would push cortisol higher and work against your results. Instead this program uses two types of cardio that support your hormonal environment. LISS on Mondays, 30 minutes at 50–60% heart rate, supports fat metabolism without recovery cost. Zone 2 at the end of each Saturday session, 20 minutes at 60–70% heart rate, is the most evidence-backed cardio for perimenopausal metabolic health and longevity. No HIIT until sleep and stress improve.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>HRV: Smarter Daily Training Decisions</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Heart Rate Variability (HRV) is a morning measurement that reflects how recovered your nervous system is. A free app called HRV4Training measures it using your phone camera, no wearable required. 60 seconds each morning before you get up. When your HRV is below your personal baseline, your body is under-recovered: modify the session or do LISS only. When HRV is at or above baseline, train at full intensity. This removes guesswork and protects you from pushing hard on the days when hard training works against you.</p>
+      </div>
+    </div>
+
+    <div class="note-block collapsible-note">
+      <div class="note-header" onclick="toggleNote(this)">
+        <h4>Your Cycle and Your Training</h4><span class="note-toggle">▼</span>
+      </div>
+      <div class="note-body">
+        <p>Even in perimenopause, many women still have identifiable cycle phases. During the follicular phase (start of period to ovulation) estrogen rises, this is typically your best window for heavier loads and higher intensity. During the luteal phase (ovulation to period) progesterone dominates, perceived effort increases, and recovery is slower, reduce volume slightly and prioritize protein and sleep even more. Track your energy on a 1–10 scale in your Friday check-in and over time we will identify patterns to make smarter programming decisions together.</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<footer>
+  <p>Lavinia <span>Calumby</span> · Personal Training &amp; Holistic Health Coaching · hello@laviniacalumby.com</p>
+</footer>
+
+<script>
+function toggleDay(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.day-toggle');
+  if (!body || !toggle) return;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  toggle.classList.toggle('open', !isOpen);
+}
+
+function toggleNote(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.note-toggle');
+  if (!body || !toggle) return;
+  const isOpen = body.classList.contains('open');
+  body.style.display = isOpen ? 'none' : 'block';
+  toggle.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+  header.parentElement.classList.toggle('note-open', !isOpen);
+}
+
+// Initialise all note bodies as hidden
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.note-body').forEach(function(b) { b.style.display = 'none'; });
+});
+</script>
+</body>
+</html>
