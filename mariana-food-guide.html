@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mariana Fett Nutrition Guide by Lavinia Calumby</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --dark:#1c1a17;--dark2:#2a2722;
+      --accent:#8a7150;--accent-light:#c9b48e;
+      --off-white:#f4f1eb;--warm-gray:#e8e2d8;--mid-gray:#a89e8e;
+      --text:#2a2722;--white:#faf9f7;
+      --green:#5a7a50;--green-light:#a8c49a;
+      --font-d:'Cormorant Garamond',serif;--font-b:'DM Sans',sans-serif
+    }
+    body{background:var(--off-white);color:var(--dark);font-family:var(--font-b);font-weight:300;line-height:1.6}
+
+    /* HEADER */
+    header{background:var(--dark);padding:3rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden}
+    header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(138,113,80,.18) 0%,transparent 70%);pointer-events:none}
+    .logo{font-family:var(--font-d);font-size:1rem;color:var(--accent-light);letter-spacing:.15em;margin-bottom:.75rem;font-style:italic}
+    header h1{font-family:var(--font-d);font-size:clamp(2rem,6vw,3.2rem);font-weight:300;color:var(--white);line-height:1.15}
+    header h1 em{font-style:italic;color:var(--accent-light)}
+    .header-meta{display:flex;justify-content:center;gap:.75rem;margin-top:1.5rem;flex-wrap:wrap}
+    .meta-pill{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mid-gray);padding:.4rem 1rem;border:1px solid rgba(201,180,142,.2)}
+
+    /* LAYOUT */
+    .container{max-width:860px;margin:0 auto;padding:3rem 1.5rem 5rem}
+
+    /* INTRO BOX */
+    .intro-box{background:var(--dark);padding:2.5rem;margin-bottom:2rem;position:relative;overflow:hidden}
+    .intro-box::before{content:'';position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(201,180,142,.08) 0%,transparent 70%)}
+    .intro-box h2{font-family:var(--font-d);font-size:1.6rem;font-weight:300;color:var(--white);margin-bottom:1rem}
+    .intro-box h2 em{font-style:italic;color:var(--accent-light)}
+    .intro-box p{font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.85;margin-bottom:.75rem}
+    .intro-box p:last-child{margin-bottom:0}
+
+    /* SECTION HEADERS */
+    .section-header{margin:2.5rem 0 1.25rem}
+    .section-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+    .section-title{font-family:var(--font-d);font-size:1.9rem;font-weight:300;color:var(--dark);line-height:1.15}
+    .section-title em{font-style:italic}
+    .section-desc{font-size:.88rem;color:var(--mid-gray);margin-top:.4rem;line-height:1.7;max-width:600px}
+
+    /* PILLAR CARDS */
+    .pillars{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:1rem;margin-bottom:2rem}
+    .pillar{background:var(--white);border:1px solid var(--warm-gray);border-top:3px solid var(--accent);padding:1.25rem}
+    .pillar-num{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-light);margin-bottom:.4rem}
+    .pillar h3{font-family:var(--font-d);font-size:1.15rem;color:var(--dark);font-weight:400;margin-bottom:.5rem}
+    .pillar p{font-size:.82rem;color:var(--text);line-height:1.65}
+
+    /* CONTENT CARDS */
+    .card{background:var(--white);border:1px solid var(--warm-gray);padding:2rem;margin-bottom:1.25rem}
+    .card h3{font-family:var(--font-d);font-size:1.3rem;font-weight:300;color:var(--dark);margin-bottom:.9rem}
+    .card h3 em{font-style:italic;color:var(--accent)}
+    .card p{font-size:.88rem;color:var(--text);line-height:1.8;margin-bottom:.75rem}
+    .card p:last-child{margin-bottom:0}
+
+    /* HIGHLIGHT BOX */
+    .highlight{background:var(--dark);padding:1.5rem 2rem;margin:1rem 0;border-left:3px solid var(--accent-light)}
+    .highlight p{font-size:.9rem;color:rgba(255,255,255,.85);line-height:1.85}
+    .highlight strong{color:var(--accent-light);font-weight:400}
+
+    /* FOOD TABLE */
+    .food-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.84rem}
+    .food-table th{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);padding:.6rem 1rem;text-align:left;border-bottom:2px solid var(--warm-gray);font-weight:400}
+    .food-table td{padding:.6rem 1rem;border-bottom:1px solid var(--off-white);color:var(--text);vertical-align:top}
+    .food-table tr:last-child td{border-bottom:none}
+    .food-table .protein-g{color:var(--accent);font-weight:400}
+
+    /* MEAL PLAN */
+    .meal-day{background:var(--white);border:1px solid var(--warm-gray);margin-bottom:.75rem}
+    .meal-header{padding:.9rem 1.25rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none;background:var(--off-white)}
+    .meal-header:hover{background:var(--warm-gray)}
+    .meal-title{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:400}
+    .meal-toggle{font-size:.7rem;color:var(--accent);opacity:.6;transition:transform .2s}
+    .meal-toggle.open{transform:rotate(180deg)}
+    .meal-body{display:none;padding:1.25rem;border-top:1px solid var(--warm-gray)}
+    .meal-body.open{display:block}
+    .meal-row{padding:.6rem 0;border-bottom:1px solid var(--off-white);display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:start}
+    .meal-row:last-child{border-bottom:none}
+    .meal-name{font-size:.88rem;color:var(--dark);font-weight:400}
+    .meal-detail{font-size:.78rem;color:var(--mid-gray);margin-top:.15rem;line-height:1.5;font-style:italic}
+    .meal-macro{font-size:.78rem;color:var(--accent);text-align:right;white-space:nowrap}
+
+    /* TIMING STRIP */
+    .timing-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem;margin:1.25rem 0}
+    .timing-block{background:var(--white);border:1px solid var(--warm-gray);padding:1rem;border-top:2px solid var(--green)}
+    .timing-label{font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--green);margin-bottom:.35rem}
+    .timing-block p{font-size:.82rem;color:var(--text);line-height:1.6}
+
+    /* SIGNAL CARDS */
+    .signals{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+    .signal{padding:1.1rem 1.25rem;border:1px solid var(--warm-gray)}
+    .signal.positive{background:rgba(90,122,80,.06);border-color:rgba(90,122,80,.25)}
+    .signal.negative{background:rgba(138,80,80,.06);border-color:rgba(138,80,80,.2)}
+    .signal-label{font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem;font-weight:400}
+    .signal.positive .signal-label{color:var(--green)}
+    .signal.negative .signal-label{color:#8a5050}
+    .signal p{font-size:.82rem;color:var(--text);line-height:1.65}
+    @media(max-width:520px){.signals{grid-template-columns:1fr}}
+
+    /* DIVIDER */
+    .divider{border:none;border-top:1px solid var(--warm-gray);margin:2.5rem 0}
+
+    footer{text-align:center;padding:2rem;font-size:.72rem;color:var(--mid-gray)}
+    footer span{font-family:var(--font-d);font-style:italic;color:var(--accent)}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Lavinia Calumby</div>
+  <h1><em>Mariana,</em> Your Nutrition <em>Guide</em></h1>
+  <div class="header-meta">
+    <div class="meta-pill">Body Recomposition</div>
+    <div class="meta-pill">Muscle Building</div>
+    <div class="meta-pill">Hormonal Health</div>
+    <div class="meta-pill">Simple Meal Planning</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="intro-box">
+    <h2>A Note Before You <em>Begin</em></h2>
+    <p>Mariana, this guide is not a diet plan and I am not a registered dietitian or nutritionist. What I am is a health and wellness coach, and what this is, is an educational resource built around your goals, your body, and what you shared with me about feeling lost with food. If you ever want a personalized clinical nutrition plan, working with a registered dietitian is always worth considering and I can help you find the right person when the time comes.</p>
+    <p>What this guide offers is a framework grounded in the principles I use in my coaching practice: education, awareness, and the understanding that food is only one part of your health. Read it as a starting point for your own exploration, not as a set of rules to follow perfectly.</p>
+  </div>
+
+  <!-- PRIMARY FOODS -->
+  <div class="section-header">
+    <div class="section-label">IIN Philosophy</div>
+    <div class="section-title">Your Health Is Bigger Than <em>Food</em></div>
+    <div class="section-desc">Before we talk about what you eat, we need to talk about everything else. Because what you eat is only one piece of your health, and it is never the whole story.</div>
+  </div>
+
+  <div class="card">
+    <h3>Primary Foods: <em>What Truly Nourishes You</em></h3>
+    <p>One of the principles I work from is the concept of primary and secondary foods, a framework from the Institute for Integrative Nutrition. Secondary foods are what we eat: proteins, carbohydrates, vegetables, fats. They matter enormously. But primary foods are the things that nourish us at a deeper level, and they have just as much influence on how our body looks, feels, and performs as anything on our plate.</p>
+    <p>Primary foods include: your relationships and the quality of your connections. Your career and whether your work gives you a sense of purpose. Your movement and daily activity beyond the gym. Your creativity and joy, the things that make you feel alive. Your stress levels and how supported you feel. Your sleep and rest. Your spiritual or inner life, whatever that means to you.</p>
+    <div class="highlight">
+      <p><strong>Why this matters for your goals:</strong> chronic stress raises cortisol, which directly promotes fat storage and muscle breakdown regardless of how well you eat. Unfulfilling work or strained relationships create a physiological stress response that no amount of protein can undo. Poor sleep disrupts the hormones that regulate hunger, recovery, and body composition more than almost any nutritional factor. Your body does not separate your emotional life from your physical one. Neither should your approach to health.</p>
+    </div>
+    <p>As you work through this guide, I want you to hold both. Notice what is nourishing you beyond food. Notice where you feel depleted in life, not just in the gym. Those areas are part of your health plan too, and we can explore them in our check-ins together.</p>
+  </div>
+
+  <div class="card">
+    <h3>Bio-Individuality: <em>You Are the Expert on Your Body</em></h3>
+    <p>Another principle I hold strongly is bio-individuality: the idea that there is no one-size-fits-all approach to nutrition. What works beautifully for one woman may not work for another, even two women of the same age, weight, and goals. Your body is unique. Your digestion, your hormonal profile, your stress patterns, your food history, and your relationship with eating are all yours alone.</p>
+    <p>Everything in this guide is based on research and on what tends to support women with similar goals. But I want you to use it as a starting point for your own awareness, not as a prescription. Pay attention to how your body responds. Notice your energy, your digestion, your mood, your sleep, and your hunger. Your body is giving you information constantly. Learning to read those signals is more valuable in the long run than following any specific set of guidelines, including these ones.</p>
+    <p>If something in this guide does not feel right for you or your lifestyle, tell me. We will adjust it. The goal is a way of eating that is genuinely yours, sustainable, and that supports the fullest version of your life.</p>
+  </div>
+
+  <!-- PROTEIN FIRST RULE -->
+  <div style="background:var(--accent);padding:2.5rem;margin-bottom:2rem;position:relative;overflow:hidden">
+    <div style="position:absolute;top:-30px;right:-20px;font-family:var(--font-d);font-size:12rem;font-weight:300;color:rgba(255,255,255,.07);line-height:1;pointer-events:none">P</div>
+    <div style="font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:.75rem">A Useful Place to Start</div>
+    <div style="font-family:var(--font-d);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:300;color:#fff;line-height:1.2;margin-bottom:1.25rem">Protein <em style="font-style:italic">First.</em><br>As a Starting Point.</div>
+    <p style="font-size:.92rem;color:rgba(255,255,255,.88);line-height:1.85;margin-bottom:.85rem">One of the most common patterns I notice in women who train consistently but are not seeing the results they want is that food gets built around everything except protein. A beautiful, colorful, healthy plate gets assembled, and protein becomes the afterthought, a small addition at the end rather than the foundation. Research on body recomposition and muscle building consistently points to protein as the nutritional factor most directly connected to those goals.</p>
+    <p style="font-size:.92rem;color:rgba(255,255,255,.88);line-height:1.85;margin-bottom:.85rem">A simple shift that many women find helpful: when you are deciding what to eat, start by asking where the protein is coming from. Then build the rest of the meal around it. This is not a rule to follow rigidly. It is a question that tends to produce better choices when it becomes a habit.</p>
+    <p style="font-size:.92rem;color:rgba(255,255,255,.88);line-height:1.85">Notice how you feel when you apply this consistently for a week or two. Your energy, your recovery, your hunger between meals. Your body will tell you whether it is working for you.</p>
+  </div>
+
+  <!-- PILLARS -->
+  <div class="section-header">
+    <div class="section-label">Foundation</div>
+    <div class="section-title">Four Things Food <em>Does</em></div>
+    <div class="section-desc">Before anything else, understand what nutrition is actually doing inside your body. These four functions are the foundation everything else builds on.</div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="pillar-num">01 Muscle Building</div>
+      <h3>Builds and Repairs</h3>
+      <p>Every time you train you create tiny tears in your muscle fibers. Protein provides the amino acids your body uses to repair and rebuild those fibers larger and stronger. Without enough protein, you train but you do not build.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02 Hormones</div>
+      <h3>Regulates Hormones</h3>
+      <p>Estrogen, progesterone, cortisol, and insulin are all directly influenced by what and when you eat. Chronic undereating raises cortisol and disrupts estrogen. Consistent protein supports the hormonal balance that keeps your cycle regular and your energy stable.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03 Recovery</div>
+      <h3>Drives Recovery</h3>
+      <p>Post-training nutrition is the signal that tells your body to shift from breaking down to building up. Carbohydrates replenish energy. Protein starts repair. Together they reduce soreness, restore strength faster, and prepare you for the next session.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">04 Sleep</div>
+      <h3>Supports Deep Sleep</h3>
+      <p>What you eat in the evening directly affects sleep quality. Adequate carbohydrates raise serotonin, a precursor to melatonin. Magnesium-rich foods support sleep depth. Undereating in the evening raises nighttime cortisol and disrupts the sleep architecture that is essential for muscle repair.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PROTEIN -->
+  <div class="section-header">
+    <div class="section-label">Understanding Protein</div>
+    <div class="section-title"><em>Protein.</em> Simply Explained.</div>
+    <div class="section-desc">Of all the nutritional factors connected to body composition and muscle building, protein is the one that appears most consistently in the research. Here is what the evidence suggests and how to think about it practically.</div>
+  </div>
+
+  <div class="card">
+    <h3>How Much <em>Tends to Support</em> Your Goals</h3>
+    <p>Research on body recomposition and muscle building in active women generally points to a range of 1.6 to 2g of protein per kilogram of bodyweight per day as a useful target. This is educational context, not a clinical prescription, and your individual needs may differ based on your digestion, food preferences, stress levels, and how your body responds.</p>
+    <p>As a reference point based on your current weight: the research-backed range would suggest somewhere around <strong>82g per day at the lower end</strong> and closer to <strong>100g per day at the higher end.</strong> Spread across 3 to 4 meals, that translates to roughly 20 to 30g of protein per meal, which tends to be very manageable once you understand what it looks like on a plate. These are reference points to explore, not targets to stress over.</p>
+
+    <div class="highlight">
+      <p><strong>A simple starting point if numbers feel overwhelming:</strong> aim to include a palm-sized portion of a protein-rich food at every meal. A palm of chicken, fish, eggs, or Greek yogurt tends to provide around 20 to 30g of protein and is a practical way to build awareness without counting.</p>
+    </div>
+
+    <h3 style="margin-top:1.25rem">Why Many Active Women Under-Eat Protein</h3>
+    <p>Healthy diets are often naturally rich in vegetables, whole grains, fruits, and healthy fats, all of which are excellent for your health. But none of them are high in protein. It is entirely possible to eat very well and still be eating less protein than your training demands. That gap between what your body is asking for and what it is receiving is often where the missing results live. Awareness is the first step.</p>
+  </div>
+
+  <div class="card">
+    <h3>Best <em>Protein Sources</em> to Build Your Meals Around</h3>
+    <table class="food-table">
+      <thead>
+        <tr><th>Food</th><th>Serving</th><th class="protein-g">Protein</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Chicken breast</td><td>100g cooked</td><td class="protein-g">31g</td><td>Lean, versatile, meal-prep friendly</td></tr>
+        <tr><td>Salmon</td><td>100g cooked</td><td class="protein-g">25g</td><td>Also provides omega-3s for inflammation and hormonal health</td></tr>
+        <tr><td>Eggs (whole)</td><td>2 large</td><td class="protein-g">12g</td><td>Complete amino acid profile, fast to prepare</td></tr>
+        <tr><td>Greek yogurt (plain, full fat)</td><td>200g</td><td class="protein-g">18-20g</td><td>Add to breakfast or as a snack. Full fat supports hormone production.</td></tr>
+        <tr><td>Cottage cheese</td><td>150g</td><td class="protein-g">18g</td><td>High casein content makes it ideal as a pre-bed snack for overnight muscle repair</td></tr>
+        <tr><td>Tuna (canned in water)</td><td>100g drained</td><td class="protein-g">26g</td><td>Fastest high-protein option. Keep cans in your bag.</td></tr>
+        <tr><td>Shrimp</td><td>100g cooked</td><td class="protein-g">24g</td><td>Very lean, quick to cook</td></tr>
+        <tr><td>Lentils</td><td>200g cooked</td><td class="protein-g">18g</td><td>Pair with rice or eggs to create a complete amino acid profile</td></tr>
+        <tr><td>Tofu (firm)</td><td>150g</td><td class="protein-g">15g</td><td>Complete plant protein. High-protein option for plant-based meals.</td></tr>
+        <tr><td>Protein powder (whey or plant)</td><td>1 scoop ~30g</td><td class="protein-g">20-25g</td><td>Convenient for post-training. Not a replacement for whole foods.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MEAL TIMING -->
+  <div class="section-header">
+    <div class="section-label">When You Eat Matters</div>
+    <div class="section-title">Nutrition <em>Timing</em> Around Training</div>
+    <div class="section-desc">You do not need to obsess over timing. But research suggests that a few simple habits around your training windows tend to support better recovery and results. These are ideas to explore, not rules to follow perfectly.</div>
+  </div>
+
+  <div class="timing-strip">
+    <div class="timing-block">
+      <div class="timing-label">Before Training</div>
+      <p>Many women find a light meal or snack with some protein and carbohydrates 30 to 60 minutes before training helps sustain energy through the session. Greek yogurt and fruit, or a small rice and chicken portion from your prep, tend to work well. Notice what feels right for your body and digestion.</p>
+    </div>
+    <div class="timing-block">
+      <div class="timing-label">During Training</div>
+      <p>Staying hydrated throughout your session supports performance and recovery. Sipping water regularly is a simple habit that makes a difference. On longer or back-to-back training days, adding a pinch of sea salt to your water can help maintain electrolyte balance.</p>
+    </div>
+    <div class="timing-block">
+      <div class="timing-label">After Training</div>
+      <p>Eating a combination of protein and carbohydrates after training tends to support muscle repair and recovery. Many women find that doing this within 30 to 45 minutes of finishing their session works well. A protein shake with fruit, or a simple bowl of chicken and rice, are practical options.</p>
+    </div>
+    <div class="timing-block">
+      <div class="timing-label">Before Bed</div>
+      <p>Some research suggests that eating a slow-digesting protein source in the evening, such as cottage cheese or Greek yogurt, may support overnight muscle repair, particularly on training days. This is something to experiment with and see if it improves your recovery and sleep quality.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BODY COMPOSITION -->
+  <div class="section-header">
+    <div class="section-label">Your Goal Explained</div>
+    <div class="section-title">Body <em>Recomposition:</em> What It Actually Means</div>
+    <div class="section-desc">You want to lose the fat that has accumulated, particularly around your hips, while building lean muscle. This is body recomposition and understanding it changes how you think about food entirely.</div>
+  </div>
+
+  <div class="card">
+    <h3>Why the Scale Is the <em>Wrong</em> Measure</h3>
+    <p>Body recomposition means losing fat and gaining muscle simultaneously. When this happens, your weight on the scale may not change much, even as your body changes significantly. Muscle is denser than fat. You can lose 3kg of fat and gain 2kg of muscle and the scale shows only 1kg difference, while your body looks and feels completely different. Do not use the scale as your primary measure of progress. Use: how your clothes fit, your strength in the gym (tracked weekly), your energy levels, and the measurements Lavinia takes at check-ins.</p>
+
+    <div class="highlight">
+      <p><strong>The recomposition equation for you specifically:</strong> eat at your maintenance calories, hit your protein target every day, and train with progressive overload 4 days per week. At 51kg and 5'5", you are already lean. Your goal is not to eat less. It is to eat better, with enough protein to build muscle and enough total food to fuel the training that changes your body composition. Restricting calories at your weight would work against you, not for you.</p>
+    </div>
+
+    <h3 style="margin-top:1.25rem">What Is Causing the Hip Fat</h3>
+    <p>At 51kg and 5'5", the changes you have noticed around your hips over the past year are not the result of eating too much. They are the result of a hormonal shift. At 38, estrogen begins its first gradual natural decline. Estrogen actively directs fat storage toward the hips and thighs during the reproductive years as a biological reserve. As it begins to decline, the body's fat distribution pattern starts to shift and remodel, even without any change in diet or activity. This is why women who have always been slim suddenly notice changes in specific areas at this age. It is not a failure. It is your hormones changing the rules. The evidence-backed response is resistance training with progressive overload combined with adequate protein and consistent total food intake. Building lean muscle raises your resting metabolic rate, improves insulin sensitivity, directly signals the body to shift from fat storage to fat utilization, and counteracts the hormonal redistribution you are experiencing. You do not need to eat less. You need to eat smarter and train harder.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="section-header">
+    <div class="section-label">A Practical Framework</div>
+    <div class="section-title">A Simple Approach to <em>Meal Building</em></div>
+    <div class="section-desc">This is not a meal plan and I am not prescribing a specific diet. What I am offering is a simple framework that many women find helpful as a starting structure. Adapt it to your food preferences, your culture, your lifestyle, and what feels right for your body.</div>
+  </div>
+
+  <div class="card">
+    <h3>The <em>Plate Method</em> as a Starting Framework</h3>
+    <p>Rather than counting calories or following a rigid plan, many women find it helpful to use a visual framework for building meals. This is one option. It is flexible, requires no weighing, and can adapt to any cuisine or food preference. Start with protein as your anchor and build around it from there.</p>
+
+    <table class="food-table">
+      <thead>
+        <tr><th>Where to Start</th><th>Plate Section</th><th>Examples</th><th>Why It Tends to Help</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong style="color:var(--accent)">Start Here →</strong></td><td><strong>About a quarter of the plate</strong></td><td>Protein: chicken, fish, eggs, Greek yogurt, tofu, lentils, shrimp. Choose this first.</td><td>Supports muscle building, hormonal synthesis, satiety, and recovery. The nutritional anchor of the meal.</td></tr>
+        <tr><td>Then</td><td><strong>About half the plate</strong></td><td>Non-starchy vegetables: spinach, broccoli, zucchini, peppers, cucumber, tomato, asparagus</td><td>Volume, fibre, micronutrients, gut health, and color. Choose varieties you actually enjoy.</td></tr>
+        <tr><td>Then</td><td><strong>About a quarter of the plate</strong></td><td>Complex carbohydrates: rice, sweet potato, quinoa, oats, bread, pasta</td><td>Fuels training, supports serotonin production and sleep, aids recovery</td></tr>
+        <tr><td>Finish</td><td><strong>A small amount of fat</strong></td><td>Olive oil, avocado, nuts, seeds, cheese</td><td>Supports hormonal production, helps absorb fat-soluble vitamins, adds satiety and flavor</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:1rem">This is a guide, not a rule. Some days will look different. That is completely fine. Consistency over time matters far more than perfection in any single meal.</p>
+  </div>
+
+  <div class="card">
+    <h3>A Sample <em>Training Day</em> for Reference</h3>
+    <p>This is one example of how a day of eating might look when you train after lunch. It is a reference point, not a prescription. Your food preferences, culture, schedule, and appetite will shape what works for you. Use this as inspiration rather than instruction.</p>
+
+    <div class="meal-day">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-title">Breakfast 7am</div><div class="meal-toggle">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-row"><div><div class="meal-name">3 scrambled eggs with spinach and 1 slice sourdough</div><div class="meal-detail">Quick to make. Full amino acid profile. The toast provides morning energy and supports serotonin production.</div></div><div><div class="meal-macro">~22g protein</div></div></div>
+        <div class="meal-row"><div><div class="meal-name">Coffee with whole milk or oat milk</div><div class="meal-detail">Optional. Avoid more than 2 cups per day on training days as excess caffeine elevates cortisol.</div></div><div><div class="meal-macro"></div></div></div>
+      </div>
+    </div>
+
+    <div class="meal-day">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-title">Pre-Training Snack 12pm (30-60 min before training)</div><div class="meal-toggle">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-row"><div><div class="meal-name">Greek yogurt (200g plain, full fat) with a banana</div><div class="meal-detail">Fast protein, easy carbohydrates. Fuels the session without feeling heavy. The potassium in the banana supports muscle contraction.</div></div><div><div class="meal-macro">~22g protein</div></div></div>
+      </div>
+    </div>
+
+    <div class="meal-day">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-title">Post-Training Within 45 min of finishing</div><div class="meal-toggle">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-row"><div><div class="meal-name">Protein shake with 250ml water or milk, plus a piece of fruit</div><div class="meal-detail">Fast-absorbing protein starts muscle repair. Carbohydrates blunt the post-training cortisol spike and replenish glycogen. This window matters.</div></div><div><div class="meal-macro">~25g protein</div></div></div>
+      </div>
+    </div>
+
+    <div class="meal-day">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-title">Lunch 3pm</div><div class="meal-toggle">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-row"><div><div class="meal-name">Chicken and rice bowl with roasted vegetables and olive oil</div><div class="meal-detail">Plate method applied. 100g chicken, 120g cooked rice, half a plate of roasted peppers, zucchini and broccoli, drizzle of olive oil. Batch cook this on Sunday and use across the week.</div></div><div><div class="meal-macro">~31g protein</div></div></div>
+      </div>
+    </div>
+
+    <div class="meal-day">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-title">Dinner 7pm</div><div class="meal-toggle">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-row"><div><div class="meal-name">Salmon fillet with sweet potato and a large green salad</div><div class="meal-detail">A 100g salmon fillet is the right portion for your frame. Omega-3s reduce training inflammation and support hormonal health. Sweet potato provides evening carbohydrates that support serotonin and melatonin for sleep. Do not skip carbohydrates at dinner if you want to sleep well.</div></div><div><div class="meal-macro">~25g protein</div></div></div>
+      </div>
+    </div>
+
+    <div class="meal-day">
+      <div class="meal-header" onclick="toggleMeal(this)">
+        <div class="meal-title">Before Bed Optional, Highly Recommended on Training Days</div><div class="meal-toggle">▼</div>
+      </div>
+      <div class="meal-body">
+        <div class="meal-row"><div><div class="meal-name">150g cottage cheese with a drizzle of honey</div><div class="meal-detail">Casein protein digests slowly over 5 to 7 hours, feeding your muscles through the night when most repair happens. This single habit makes a measurable difference in recovery and muscle building over time.</div></div><div><div class="meal-macro">~18g protein</div></div></div>
+      </div>
+    </div>
+
+    <div class="highlight" style="margin-top:1.25rem">
+      <p><strong>Total protein in this example day: approximately 100g.</strong> Based on the research range for someone at your weight and training load, this sits comfortably within a supportive zone. Your actual needs may be slightly different depending on how your body responds, your digestion, your stress levels, and your activity on any given day. Use this as a reference, not a target to hit exactly.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- MEAL PREP -->
+  <div class="section-header">
+    <div class="section-label">Save Time, Hit Your Goals</div>
+    <div class="section-title">Simple <em>Meal Prep</em> Strategy</div>
+    <div class="section-desc">You do not need to spend Sunday cooking elaborate meals. You need a 60 to 90 minute prep session that sets up the whole week.</div>
+  </div>
+
+  <div class="card">
+    <h3>A Simple <em>Prep Approach</em> Worth Trying</h3>
+    <p>One approach many busy women find helpful is setting aside 60 to 90 minutes on a Sunday to prepare some basics for the week. This is not a requirement, and it may not suit your lifestyle or how you prefer to cook. But if the question of what to eat feels overwhelming during a busy week, having a few things ready tends to make protein-first choices much easier.</p>
+
+    <table class="food-table">
+      <thead>
+        <tr><th>What to Prep</th><th>How Much</th><th>Uses Across the Week</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Grilled or baked chicken</strong></td><td>600 to 800g</td><td>Rice bowls, salads, wraps, post-training meal</td></tr>
+        <tr><td><strong>Cooked rice or quinoa</strong></td><td>400g dry weight</td><td>Base for lunches and dinners across 4 days</td></tr>
+        <tr><td><strong>Roasted vegetables</strong></td><td>3 to 4 types, large tray</td><td>Add to any bowl, eat alongside any protein</td></tr>
+        <tr><td><strong>Hard boiled eggs</strong></td><td>6 to 8 eggs</td><td>Quick breakfast, fast snack, added to salads</td></tr>
+        <tr><td><strong>Greek yogurt</strong></td><td>Buy 1kg tub</td><td>Breakfast base, pre-training snack, protein hit any time</td></tr>
+        <tr><td><strong>Washed and cut salad greens</strong></td><td>1 large container</td><td>Side to any main meal. Zero effort if pre-washed.</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:1rem">With these five components prepped, you can put together a complete meal in under 5 minutes any time of day. This removes the decision fatigue that leads to poor choices when you are tired or busy.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HORMONES AND FOOD -->
+  <div class="section-header">
+    <div class="section-label">Food and Female Physiology</div>
+    <div class="section-title">How Food Supports Your <em>Hormones</em></div>
+    <div class="section-desc">At 38, with a regular cycle and an active lifestyle, the foods you eat directly influence your estrogen metabolism, progesterone levels, cortisol, and insulin sensitivity. Here is what actually matters.</div>
+  </div>
+
+  <div class="card">
+    <h3>Protein Is Not Just for Muscle. <em>It Builds Your Hormones.</em></h3>
+    <p>This is the connection most nutrition guides miss entirely. Protein is not only the raw material for muscle. It is the raw material for hormones themselves. Amino acids from dietary protein are the direct building blocks of thyroid hormones (which regulate metabolism, energy, and body weight), neurotransmitters including serotonin, dopamine, and GABA (which regulate mood, sleep, and stress response), growth hormone (which drives fat metabolism and muscle repair overnight), and peptide hormones including insulin and glucagon which control blood sugar and energy storage. Without adequate protein, your body cannot synthesize these hormones in sufficient quantities regardless of what else you eat. This is not a deficiency you can supplement your way out of. It requires consistent daily protein from food.</p>
+    <div class="highlight">
+      <p><strong>What this means practically:</strong> every time you under-eat protein, you are not just limiting muscle building. You are limiting your body's capacity to regulate your thyroid, your mood, your sleep, your metabolism, and your blood sugar simultaneously. Protein is the most hormonally relevant macronutrient in your diet. This is why it comes first.</p>
+    </div>
+    <h3 style="margin-top:1.25rem">Foods That Further <em>Support</em> Your Hormonal Health</h3>
+    <table class="food-table">
+      <thead>
+        <tr><th>Food Category</th><th>Examples</th><th>What It Does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Cruciferous vegetables</strong></td><td>Broccoli, cauliflower, Brussels sprouts, kale</td><td>Support estrogen metabolism and detoxification through the liver. Eat them 3 to 4 times per week.</td></tr>
+        <tr><td><strong>Healthy fats</strong></td><td>Avocado, olive oil, fatty fish, nuts</td><td>Cholesterol from healthy fats is the direct precursor to estrogen and progesterone. Low-fat diets disrupt hormonal production.</td></tr>
+        <tr><td><strong>Magnesium-rich foods</strong></td><td>Dark leafy greens, pumpkin seeds, dark chocolate, almonds</td><td>Supports sleep quality, reduces PMS symptoms, supports insulin sensitivity and cortisol regulation</td></tr>
+        <tr><td><strong>Fiber</strong></td><td>Vegetables, fruit, legumes, oats</td><td>Supports healthy estrogen clearance through the gut. Low fiber is directly linked to estrogen dominance and weight gain in the midsection.</td></tr>
+        <tr><td><strong>Fermented foods</strong></td><td>Greek yogurt, kefir, kimchi, sauerkraut</td><td>Gut microbiome health is directly linked to estrogen metabolism. A healthy gut processes and clears estrogen efficiently.</td></tr>
+        <tr><td><strong>Zinc-rich foods</strong></td><td>Pumpkin seeds, beef, shellfish, chickpeas</td><td>Supports progesterone production and immune function. Often depleted in active women.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Eat Differently Across Your <em>Cycle</em></h3>
+    <p>Your training guide explains how to adjust intensity across your cycle. Your nutrition can also shift slightly to support each phase.</p>
+
+    <div class="timing-strip">
+      <div class="timing-block" style="border-top-color:var(--accent)">
+        <div class="timing-label" style="color:var(--accent)">Follicular Phase (Days 1-14)</div>
+        <p>Energy is higher, metabolism is slightly lower. Your body uses carbohydrates efficiently. This is your best window for higher carbohydrate meals around training. Lean into rice, quinoa, oats, and fruit alongside your protein.</p>
+      </div>
+      <div class="timing-block" style="border-top-color:#7a8a50">
+        <div class="timing-label" style="color:#7a8a50">Ovulation (Around Day 14)</div>
+        <p>Strength is at its peak. Training hard is appropriate. Ensure protein is optimized this week. Add zinc-rich foods (pumpkin seeds, shellfish) which support the hormonal surge at ovulation.</p>
+      </div>
+      <div class="timing-block" style="border-top-color:#507a8a">
+        <div class="timing-label" style="color:#507a8a">Luteal Phase (Days 15-28)</div>
+        <p>Metabolism rises slightly, hunger increases, carbohydrate cravings are normal and have a physiological cause. Do not restrict. Honor the hunger with quality food. Prioritize magnesium-rich foods and complex carbohydrates. Reduce caffeine to manage cortisol and sleep disruption.</p>
+      </div>
+      <div class="timing-block" style="border-top-color:#8a508a">
+        <div class="timing-label" style="color:#8a508a">Menstruation (Days 1-5)</div>
+        <p>Iron loss from menstrual blood makes iron-rich foods important this week: red meat, lentils, spinach, paired with vitamin C for absorption. Anti-inflammatory foods (salmon, turmeric, dark leafy greens) reduce cramping and support faster recovery.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- BODY SIGNALS -->
+  <div class="section-header">
+    <div class="section-label">Learn to Read Your Body</div>
+    <div class="section-title">Signs Your Nutrition Is <em>Working</em></div>
+    <div class="section-desc">You do not need an app to know if your nutrition is supporting your goals. Your body gives you clear signals. Learn to read them.</div>
+  </div>
+
+  <div class="signals">
+    <div class="signal positive">
+      <div class="signal-label">Your Nutrition Is Working When</div>
+      <p>You feel strong and energized during training. You recover well between sessions. Your sleep is deep and consistent. Your mood is stable. Your clothes fit differently over 4 to 6 weeks. Your hunger is manageable, not constant. Your cycle is regular. You are making progress on your key lifts every week.</p>
+    </div>
+    <div class="signal negative">
+      <div class="signal-label">Signs to Address</div>
+      <p>Constant fatigue despite adequate sleep. Losing strength or unable to progress weights. Persistent cravings for sugar or salt. Irregular cycle or worsening PMS. Feeling cold frequently. Poor recovery or constant muscle soreness. These can indicate under-eating, low protein, or micronutrient deficiencies.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- WHAT TO AVOID -->
+  <div class="section-header">
+    <div class="section-label">Common Mistakes</div>
+    <div class="section-title">What Gets in the <em>Way</em></div>
+  </div>
+
+  <div class="card">
+    <h3>The Habits That Are Working <em>Against</em> You</h3>
+    <table class="food-table">
+      <thead>
+        <tr><th>Habit</th><th>Why It Slows Progress</th><th>Simple Fix</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Skipping breakfast or eating too little in the morning</strong></td><td>Elevates morning cortisol, increases muscle breakdown, drives afternoon overeating</td><td>A protein-rich breakfast within 60 to 90 minutes of waking. Eggs, Greek yogurt, or a protein shake are all fast options.</td></tr>
+        <tr><td><strong>Eating too little protein consistently</strong></td><td>Training creates demand for amino acids. Without supply, the body cannot build or repair muscle regardless of effort</td><td>Palm of protein at every meal. Track for one week to calibrate your awareness, then use portion estimation.</td></tr>
+        <tr><td><strong>Avoiding carbohydrates to lose weight</strong></td><td>Carbohydrates fuel training, support serotonin and sleep, and support hormonal health. Low carb diets in active women raise cortisol and disrupt the cycle</td><td>Include complex carbohydrates at every main meal, especially around training.</td></tr>
+        <tr><td><strong>Undereating in the evening</strong></td><td>Low evening food intake raises nighttime cortisol, disrupts sleep, and reduces overnight muscle repair</td><td>A balanced dinner with protein and carbohydrates. Do not fear food before bed.</td></tr>
+        <tr><td><strong>Eating very differently on weekends</strong></td><td>Consistency across 7 days matters more than perfection on 5 days and excess on 2. Weekend patterns often undo weekday effort</td><td>Apply the plate method on weekends too. Flexibility within structure rather than abandonment of it.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- EAT THE RAINBOW -->
+  <div class="section-header">
+    <div class="section-label">IIN Principle</div>
+    <div class="section-title">Eat the <em>Rainbow</em></div>
+    <div class="section-desc">Color in food is not decoration. Each color represents a distinct group of phytonutrients that performs a specific function in your body from reducing inflammation to supporting estrogen metabolism, gut health, and muscle repair. The more colors on your plate, the more systems you support.</div>
+  </div>
+
+  <div class="card">
+    <table class="food-table">
+      <thead>
+        <tr><th>Color</th><th>Key Foods</th><th>What It Does for You</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color:#c0392b">Red</strong></td>
+          <td>Tomatoes, red peppers, strawberries, cherries, red cabbage</td>
+          <td>Lycopene and anthocyanins reduce exercise-induced inflammation, support cardiovascular health, and protect cells from oxidative stress after training</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#e67e22">Orange and Yellow</strong></td>
+          <td>Sweet potato, carrots, mango, turmeric, pumpkin, yellow pepper</td>
+          <td>Beta-carotene converts to Vitamin A which supports skin health, immune function, and hormonal signaling. Turmeric specifically reduces post-training soreness and supports estrogen detoxification</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#27ae60">Dark Green</strong></td>
+          <td>Spinach, kale, broccoli, Brussels sprouts, arugula, asparagus</td>
+          <td>Folate, magnesium, iron, and sulforaphane. Cruciferous greens directly support estrogen clearance through the liver. Magnesium supports sleep, insulin sensitivity, and cortisol regulation. Your most important color category.</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#8e44ad">Purple and Blue</strong></td>
+          <td>Blueberries, blackberries, red grapes, purple cabbage, eggplant, beets</td>
+          <td>Resveratrol and anthocyanins are among the most powerful anti-inflammatory compounds available through food. Beets support blood flow and nitric oxide production which directly enhances training performance</td>
+        </tr>
+        <tr>
+          <td><strong style="color:#a89e8e">White and Brown</strong></td>
+          <td>Garlic, onion, mushrooms, cauliflower, ginger</td>
+          <td>Allicin in garlic and onion supports immune function and reduces systemic inflammation. Mushrooms are the only plant source of Vitamin D and provide ergothioneine which supports cellular repair and longevity</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <p><strong>The practical target:</strong> aim for at least 4 different colors per day, not all at once. A red pepper in your lunch, spinach in your dinner, blueberries in your yogurt, and sweet potato as your carbohydrate source covers most of the spectrum. Over 7 days you should cycle through all 5 color groups at least once. This is not complicated. It is just awareness.</p>
+    </div>
+  </div>
+
+  <!-- RAINBOW BOWL BUILDER -->
+  <div class="card">
+    <h3>Build a <em>Rainbow Bowl</em> Without a Recipe</h3>
+    <p>Mariana, you mentioned you lack creativity in the kitchen. The bowl method removes that problem entirely. Pick one item from each column, combine them, add your sauce. Every combination works. No recipe needed.</p>
+
+    <table class="food-table">
+      <thead>
+        <tr><th>① Protein First</th><th>② Base (Carb)</th><th>③ Color 1</th><th>④ Color 2</th><th>⑤ Fat + Flavor</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Grilled chicken</td><td>White rice</td><td>Roasted red pepper</td><td>Spinach</td><td>Tahini and lemon</td></tr>
+        <tr><td>Salmon</td><td>Quinoa</td><td>Cherry tomatoes</td><td>Cucumber</td><td>Olive oil and herbs</td></tr>
+        <tr><td>Tuna</td><td>Sweet potato</td><td>Shredded purple cabbage</td><td>Avocado</td><td>Lime and chili flakes</td></tr>
+        <tr><td>Eggs (soft boiled)</td><td>Brown rice</td><td>Roasted carrots</td><td>Arugula</td><td>Pesto or hummus</td></tr>
+        <tr><td>Tofu</td><td>Lentils</td><td>Beets</td><td>Kale</td><td>Ginger soy dressing</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:1rem;font-size:.85rem;color:var(--mid-gray);font-style:italic">Every row is a complete, nutritionally balanced meal. Mix and match freely. If you prepped the base and protein on Sunday, assembling any of these takes 5 minutes.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- FOOD COMBINING -->
+  <div class="section-header">
+    <div class="section-label">IIN Principle</div>
+    <div class="section-title">Food <em>Combining:</em> How Foods Work Together</div>
+    <div class="section-desc">Food combining is the understanding that certain foods eaten together create significantly better outcomes than the same foods eaten separately. Not because of digestion myths, but because of nutrient absorption, blood sugar management, and how macronutrients interact in the body.</div>
+  </div>
+
+  <div class="card">
+    <h3>Combinations That <em>Amplify</em> Results</h3>
+
+    <div class="timing-strip">
+      <div class="timing-block" style="border-top-color:var(--green)">
+        <div class="timing-label" style="color:var(--green)">Protein + Fat</div>
+        <p>Slows digestion and increases satiety. Stabilizes blood sugar and prevents the energy crashes that drive cravings. Example: eggs with avocado. Greek yogurt with nuts. Chicken with olive oil.</p>
+      </div>
+      <div class="timing-block" style="border-top-color:var(--accent)">
+        <div class="timing-label" style="color:var(--accent)">Protein + Carb (around training)</div>
+        <p>The most important combination for body recomposition. Carbohydrates create an insulin response that drives amino acids into muscle tissue. This combination post-training is what makes the training stimulus translate into actual muscle. Example: rice and chicken. Banana and protein shake.</p>
+      </div>
+      <div class="timing-block" style="border-top-color:#507a8a">
+        <div class="timing-label" style="color:#507a8a">Iron + Vitamin C</div>
+        <p>Vitamin C increases non-heme iron absorption by up to 3 times. Especially important during menstruation. Example: lentils with red pepper. Spinach salad with lemon dressing. Red meat with tomatoes.</p>
+      </div>
+      <div class="timing-block" style="border-top-color:#8a508a">
+        <div class="timing-label" style="color:#8a508a">Fat-Soluble Vitamins + Fat</div>
+        <p>Vitamins A, D, E, and K require dietary fat to be absorbed. Eating vegetables without fat means many of their nutrients pass through unabsorbed. Example: always add olive oil, avocado, or nuts to your vegetable dishes. Never eat a fat-free salad.</p>
+      </div>
+    </div>
+
+    <div class="timing-strip" style="margin-top:0">
+      <div class="timing-block" style="border-top-color:#c0392b">
+        <div class="timing-label" style="color:#c0392b">Turmeric + Black Pepper</div>
+        <p>Piperine in black pepper increases curcumin absorption from turmeric by up to 2000%. Always pair them. Add both to rice, soups, roasted vegetables, or scrambled eggs. This combination actively reduces post-training inflammation.</p>
+      </div>
+      <div class="timing-block" style="border-top-color:#e67e22">
+        <div class="timing-label" style="color:#e67e22">Plant Protein + Grains</div>
+        <p>Most plant proteins are incomplete amino acid sources. Combining legumes with grains creates a complete profile. Example: lentils with rice. Hummus with pita. Black beans with quinoa. Essential if you have plant-based meals.</p>
+      </div>
+      <div class="timing-block" style="border-top-color:var(--green)">
+        <div class="timing-label" style="color:var(--green)">Magnesium + Vitamin B6</div>
+        <p>B6 enhances magnesium absorption and together they support progesterone production, reduce PMS symptoms, and improve sleep quality. Example: chicken (B6) with pumpkin seeds or dark chocolate (magnesium). Banana and almonds as a snack.</p>
+      </div>
+      <div class="timing-block" style="border-top-color:var(--mid-gray)">
+        <div class="timing-label" style="color:var(--mid-gray)">What to Avoid Combining</div>
+        <p>Coffee with iron-rich meals reduces iron absorption significantly. Leave 30 minutes between coffee and iron-rich food. Calcium supplements with iron supplements compete for absorption. Take them at different times of day.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GUT HEALTH -->
+  <div class="section-header">
+    <div class="section-label">The Foundation of Everything</div>
+    <div class="section-title">Gut Health and <em>Microbiome</em></div>
+    <div class="section-desc">Your gut microbiome is a community of trillions of bacteria that directly controls estrogen metabolism, inflammation, immune function, mood, sleep quality, and how efficiently your body absorbs the nutrients you eat. This is not wellness language. It is physiology. A healthy gut makes everything else work better.</div>
+  </div>
+
+  <div class="card">
+    <h3>Why Your Gut Matters for Your <em>Goals Specifically</em></h3>
+    <p>The gut microbiome produces an enzyme called beta-glucuronidase which is responsible for reactivating and recirculating estrogen through the body. When gut bacteria are imbalanced a condition called dysbiosis this enzyme becomes overactive and estrogen recirculates instead of being cleared. The result is estrogen dominance: more fat storage around the hips and midsection, heavier and more symptomatic periods, mood disruption, and difficulty losing fat despite clean eating. This is one of the most common and most overlooked reasons women at 38 struggle with body composition despite doing everything right.</p>
+
+    <div class="highlight">
+      <p><strong>The connection to your goal is direct:</strong> a healthy gut clears estrogen efficiently, reduces inflammation, improves insulin sensitivity, and allows your body to absorb the protein and micronutrients your training depends on. You can eat a perfect diet and still underperform if your gut is not functioning well.</p>
+    </div>
+
+    <h3 style="margin-top:1.25rem">Foods That Build a <em>Healthy Microbiome</em></h3>
+    <table class="food-table">
+      <thead>
+        <tr><th>Category</th><th>Foods</th><th>How Often</th><th>Why It Matters</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Fermented Foods (Probiotics)</strong></td>
+          <td>Greek yogurt, kefir, kimchi, sauerkraut, miso, tempeh</td>
+          <td>Daily, at least one serving</td>
+          <td>Introduce beneficial bacteria directly. Support estrogen clearance, reduce inflammation, improve immune function</td>
+        </tr>
+        <tr>
+          <td><strong>Prebiotic Fiber (Feeds Good Bacteria)</strong></td>
+          <td>Garlic, onion, leeks, asparagus, bananas, oats, Jerusalem artichoke</td>
+          <td>Daily across meals</td>
+          <td>Prebiotic fiber is the food that beneficial gut bacteria eat. Without it, the good bacteria cannot thrive even if you take probiotics</td>
+        </tr>
+        <tr>
+          <td><strong>Diverse Fiber Sources</strong></td>
+          <td>Legumes, vegetables, fruits, seeds, whole grains as many different types as possible</td>
+          <td>Aim for 30 different plant foods per week</td>
+          <td>Microbiome diversity is directly linked to better estrogen metabolism, lower inflammation, and healthier body composition. Variety is the single most important factor.</td>
+        </tr>
+        <tr>
+          <td><strong>Polyphenol-Rich Foods</strong></td>
+          <td>Blueberries, dark chocolate (85%+), green tea, olive oil, red cabbage</td>
+          <td>Daily</td>
+          <td>Polyphenols selectively feed beneficial bacteria and inhibit harmful ones. They are also among the most potent anti-inflammatory compounds available through food</td>
+        </tr>
+        <tr>
+          <td><strong>Bone Broth and Collagen</strong></td>
+          <td>Bone broth, collagen powder added to coffee or smoothies</td>
+          <td>3 to 4 times per week</td>
+          <td>Glutamine from bone broth repairs and maintains the intestinal lining, reducing gut permeability (leaky gut) which is a driver of systemic inflammation and hormonal disruption</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:1.25rem">What Disrupts Your Gut</h3>
+    <table class="food-table">
+      <thead>
+        <tr><th>Disruptor</th><th>Effect</th><th>Practical Note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ultra-processed foods</td><td>Destroy beneficial bacteria, feed harmful strains, promote inflammation</td><td>This does not mean you can never eat them. It means they should not be daily staples. 80 to 20 rule applies here.</td></tr>
+        <tr><td>Antibiotics</td><td>Wipe out beneficial bacteria non-selectively</td><td>After any antibiotic course, supplement with a quality probiotic for 4 to 8 weeks and increase fermented food intake</td></tr>
+        <tr><td>Chronic stress</td><td>High cortisol directly alters gut microbiome composition and increases intestinal permeability</td><td>Another reason why stress management through your training cool-downs and sleep tools is gut health work, not just mental health work</td></tr>
+        <tr><td>Insufficient fiber</td><td>Starves beneficial bacteria, reduces microbiome diversity</td><td>If you eat fewer than 5 different plant foods per day you are likely undernourishing your microbiome. Add one new vegetable per week.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- HYPERTROPHY NUTRITION -->
+  <div class="section-header">
+    <div class="section-label">Building Lean Muscle</div>
+    <div class="section-title">Nutrition for <em>Hypertrophy</em></div>
+    <div class="section-desc">Hypertrophy means building lean muscle tissue. Your training creates the stimulus. Your nutrition provides the raw material. Without both working together, only one of them is doing its job. Here is exactly what your body needs to build the lean, defined physique you are working toward.</div>
+  </div>
+
+  <div class="card">
+    <h3>The Three Non-Negotiables for <em>Muscle Building</em></h3>
+
+    <div class="pillars" style="margin-bottom:1.25rem">
+      <div class="pillar" style="border-top-color:var(--accent)">
+        <div class="pillar-num">01 Protein Synthesis</div>
+        <h3>Leucine Threshold</h3>
+        <p>Muscle protein synthesis requires a minimum dose of leucine, an essential amino acid, to be triggered. This threshold is approximately 2.5 to 3g of leucine per meal. A 30g serving of animal protein (chicken, fish, eggs, Greek yogurt) meets this threshold. This is why protein dose per meal matters, not just total daily intake.</p>
+      </div>
+      <div class="pillar" style="border-top-color:var(--green)">
+        <div class="pillar-num">02 Energy Availability</div>
+        <h3>Do Not Under-Eat</h3>
+        <p>Muscle cannot be built in a caloric deficit. Restriction tells your body to preserve fat and burn muscle for energy, the opposite of your goal. At 51kg you do not need to eat less. You need to eat enough to fuel training and support recovery. If you are losing weight unintentionally while training, you are under-eating and muscle building will stall.</p>
+      </div>
+      <div class="pillar" style="border-top-color:#507a8a">
+        <div class="pillar-num">03 Recovery Nutrition</div>
+        <h3>The Repair Window</h3>
+        <p>The 2 to 3 hours after training are when your body is most primed to absorb protein and begin muscle repair. A protein and carbohydrate meal within 45 minutes of finishing your session is the single most impactful nutritional habit you can build around your training.</p>
+      </div>
+    </div>
+
+    <h3>Micronutrients That Directly Support <em>Muscle Growth</em></h3>
+    <table class="food-table">
+      <thead>
+        <tr><th>Nutrient</th><th>Role in Hypertrophy</th><th>Best Food Sources</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Vitamin D</strong></td><td>Regulates over 200 genes involved in muscle protein synthesis. Deficiency is directly linked to reduced muscle mass and strength, especially in women. Get bloodwork done if you are not sure of your levels.</td><td>Fatty fish (salmon, sardines), egg yolks, mushrooms exposed to sunlight, sunlight. Most people in cities need to supplement: 2000 IU daily is a safe starting point.</td></tr>
+        <tr><td><strong>Omega-3 Fatty Acids</strong></td><td>Reduce post-training inflammation, improve muscle protein synthesis response to leucine, support cell membrane health. Active women benefit significantly from consistent omega-3 intake.</td><td>Salmon, sardines, mackerel, flaxseeds, chia seeds, walnuts. Aim for 2 servings of fatty fish per week minimum.</td></tr>
+        <tr><td><strong>Zinc</strong></td><td>Required for testosterone production (yes, women produce and need testosterone for muscle building), immune function, and protein synthesis. Often depleted in active women eating predominantly plant-based.</td><td>Oysters (highest source), beef, pumpkin seeds, chickpeas, cashews</td></tr>
+        <tr><td><strong>Creatine</strong></td><td>Replenishes phosphocreatine stores between sets, allowing more reps at a given weight. Over time this additional volume compounds into significantly more muscle mass. The most evidence-supported supplement for exactly your goals.</td><td>Found in red meat and fish but not in sufficient quantities through food alone. Supplement with 3 to 5g monohydrate daily.</td></tr>
+        <tr><td><strong>Carbohydrates (often avoided)</strong></td><td>Glycogen from carbohydrates is the primary fuel for resistance training. Low glycogen means weaker sessions, less volume, and less stimulus for growth. Carbohydrates do not make you fat. Consistent caloric excess does.</td><td>Rice, sweet potato, oats, quinoa, fruit, legumes. Time them around training for best results.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- KITCHEN CREATIVITY -->
+  <div class="section-header">
+    <div class="section-label">For the Woman Who Does Not Love Cooking</div>
+    <div class="section-title">Simple <em>Combinations</em> That Never Get Boring</div>
+    <div class="section-desc">Mariana, you said you lack creativity in the kitchen. This section is built for you. No recipes. No techniques. Just practical combinations that are nutritionally complete, quick to assemble, and actually taste good. All of them use the foods you already have from your Sunday prep.</div>
+  </div>
+
+  <div class="card">
+    <h3>10 Meals You Can Make in <em>Under 10 Minutes</em></h3>
+    <table class="food-table">
+      <thead>
+        <tr><th>#</th><th>Meal</th><th>How to Make It</th><th>Protein</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Tuna Avocado Rice Bowl</strong></td><td>Canned tuna over rice, half an avocado, cherry tomatoes, squeeze of lemon, olive oil drizzle</td><td class="protein-g">~40g</td></tr>
+        <tr><td>2</td><td><strong>Greek Yogurt Power Bowl</strong></td><td>200g plain Greek yogurt, a handful of blueberries, 2 tbsp pumpkin seeds, drizzle of honey, 1 tbsp almond butter</td><td class="protein-g">~25g</td></tr>
+        <tr><td>3</td><td><strong>Egg and Veggie Scramble</strong></td><td>3 eggs scrambled with any leftover vegetables from your prep, add spinach, season with turmeric and black pepper</td><td class="protein-g">~22g</td></tr>
+        <tr><td>4</td><td><strong>Salmon and Sweet Potato Plate</strong></td><td>Baked or pan-cooked salmon fillet, reheated sweet potato from prep, handful of arugula dressed with lemon and olive oil</td><td class="protein-g">~38g</td></tr>
+        <tr><td>5</td><td><strong>Chicken and Hummus Wrap</strong></td><td>Whole wheat tortilla, sliced chicken from prep, 2 tbsp hummus, cucumber, red pepper strips, handful of spinach</td><td class="protein-g">~42g</td></tr>
+        <tr><td>6</td><td><strong>Cottage Cheese Plate</strong></td><td>150g cottage cheese alongside hard-boiled eggs from prep, sliced tomatoes, cucumber, sourdough. Add sea salt and herbs.</td><td class="protein-g">~30g</td></tr>
+        <tr><td>7</td><td><strong>Lentil and Roasted Veg Bowl</strong></td><td>Canned or cooked lentils over a bed of roasted vegetables from prep, feta crumbled on top, tahini and lemon dressing</td><td class="protein-g">~24g</td></tr>
+        <tr><td>8</td><td><strong>Shrimp Stir-Fry Bowl</strong></td><td>Frozen shrimp (thawed under cold water, 5 min) cooked in olive oil and garlic, add soy sauce, serve over rice with any green vegetable</td><td class="protein-g">~36g</td></tr>
+        <tr><td>9</td><td><strong>Post-Training Recovery Bowl</strong></td><td>Protein shake blended with banana, 1 tbsp peanut butter, 150ml milk, a handful of oats. Drink it or eat it thicker.</td><td class="protein-g">~35g</td></tr>
+        <tr><td>10</td><td><strong>Before Bed Plate</strong></td><td>150g cottage cheese, a few dark chocolate squares (85%), a small handful of almonds, a kiwi fruit. Covers protein, magnesium, and sleep support in one plate.</td><td class="protein-g">~20g</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>5 Sauces and Dressings That Make <em>Everything Taste Different</em></h3>
+    <p>One of the simplest ways to create variety without creativity is to rotate your sauces. The same chicken and rice bowl tastes completely different with each of these.</p>
+
+    <table class="food-table">
+      <thead>
+        <tr><th>Sauce</th><th>How to Make It (30 seconds)</th><th>Pairs With</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Lemon Tahini</strong></td><td>2 tbsp tahini, juice of 1 lemon, 1 tbsp water, pinch of salt. Stir.</td><td>Any grain bowl, roasted vegetables, chicken, falafel</td></tr>
+        <tr><td><strong>Ginger Soy</strong></td><td>2 tbsp soy sauce, 1 tsp sesame oil, 1 tsp grated ginger, squeeze of lime</td><td>Salmon, shrimp, tofu, rice, stir-fried vegetables</td></tr>
+        <tr><td><strong>Avocado Lime</strong></td><td>Half an avocado mashed with lime juice, salt, and chili flakes</td><td>Eggs, tuna, grilled chicken, anything Mexican-inspired</td></tr>
+        <tr><td><strong>Yogurt Herb</strong></td><td>4 tbsp Greek yogurt, lemon juice, garlic powder, fresh or dried herbs (dill, mint, or parsley)</td><td>Salmon, grilled vegetables, falafel, lamb</td></tr>
+        <tr><td><strong>Pesto</strong></td><td>Buy good quality store-bought. One jar lasts a week.</td><td>Pasta, rice, chicken, eggs, roasted tomatoes, anything</td></tr>
+      </tbody>
+    </table>
+
+    <div class="highlight">
+      <p><strong>The variety formula:</strong> same protein, same base, different sauce and different color vegetables. Monday chicken bowl with lemon tahini and roasted peppers. Wednesday the same chicken bowl with ginger soy and spinach and cucumber. Thursday the same bowl with avocado lime and tomatoes and corn. Three different meals from one Sunday prep session.</p>
+    </div>
+  </div>
+
+
+  <hr class="divider">
+
+  <!-- MULTIDIMENSIONAL HEALTH CLOSING -->
+  <div class="section-header">
+    <div class="section-label">IIN Philosophy</div>
+    <div class="section-title">Your Health Is <em>Multidimensional</em></div>
+    <div class="section-desc">Food supports your goals. But your goals are supported by much more than food alone.</div>
+  </div>
+
+  <div class="card">
+    <h3>Everything That <em>Affects How You Feel</em></h3>
+    <p>The research is consistent: sleep quality directly regulates the hormones that control hunger, recovery, and body composition. Chronic stress raises cortisol, disrupts estrogen metabolism, and promotes the exact pattern of fat storage you are experiencing, regardless of how well you eat. The quality of your relationships and whether your daily life feels meaningful influence your nervous system, your inflammation levels, and your capacity to recover from training in ways that no supplement can replicate.</p>
+    <p>This is not to say food does not matter. It matters enormously. But the most effective nutritional strategy in the world has a ceiling when the rest of life is depleting you. As your coach, I am interested in the whole picture, not just what is on your plate.</p>
+    <div class="highlight">
+      <p><strong>The questions worth asking alongside your nutrition:</strong> How is your sleep? How is your stress, really? Are there areas of your life that feel draining rather than nourishing? Are you moving joyfully, not just training hard? Do you have relationships and moments in your day that genuinely restore you? These are not separate from your health goals. They are part of them.</p>
+    </div>
+    <p>In our Friday check-ins, feel free to share more than just your weights and energy score. If something in your life feels off, that context helps me support you better. Health is not built in the gym and kitchen alone. It is built across the whole of how you live.</p>
+  </div>
+
+  <div class="intro-box" style="margin-top:1rem">
+    <h2>One Last <em>Thing</em></h2>
+    <p>Mariana, this guide is a starting point, not a prescription. It is built around what the research suggests and what tends to work for women with your goals, but your body is yours and only you can tell what actually works for it. Explore, notice, adjust, and talk to me about what you are experiencing.</p>
+    <p>If you ever want more specific clinical guidance on nutrition, working with a registered dietitian is something I can help you find. In the meantime, start simply: pay attention to protein, build your meals around it, eat foods that make you feel energized and well, and treat yourself with the same patience and curiosity you bring to your training.</p>
+    <p>Send me your Friday check-in every week. That conversation is where we refine everything together.</p>
+    <p style="color:rgba(255,255,255,.5);font-size:.85rem;margin-top:.75rem">Questions about anything in this guide? Message me any time.</p>
+  </div>
+
+</div>
+
+<footer>
+  <p>Lavinia <span>Calumby</span> · Personal Training &amp; Holistic Health Coaching · hello@laviniacalumby.com</p>
+</footer>
+
+<script>
+function toggleMeal(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.meal-toggle');
+  if (!body || !toggle) return;
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  toggle.classList.toggle('open', !isOpen);
+}
+</script>
+</body>
+</html>
